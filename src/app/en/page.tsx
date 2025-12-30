@@ -171,7 +171,7 @@ export default function EnglishHomePage() {
           {/* Overlapping Button */}
           <div className="mt-6 flex justify-center booking_button">
             <Link
-              href="/reservierung"
+              href="/reservation"
               className="w-full sm:w-2/3 md:w-1/2 px-4 py-3 sm:px-10 sm:py-4 text-[#fef3c7] text-lg sm:text-xl font-semibold rounded-md shadow-xl border border-amber-400/60 transition-all relative overflow-hidden"
               style={{
                 backgroundImage: "url('/images/button.png')",
