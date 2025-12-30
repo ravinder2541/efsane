@@ -1,0 +1,178 @@
+{
+  "categories": {
+    "appetizers": {
+      "de": "Vorspeisen",
+      "en": "Appetizers",
+      "items": [
+        {
+          "id": "app_001",
+          "name": {
+            "de": "Traditionelle Leberwurst",
+            "en": "Traditional Liver Sausage"
+          },
+          "description": {
+            "de": "Hausgemachte Leberwurst mit Zwiebeln und Schwarzbrot",
+            "en": "Homemade liver sausage with onions and dark bread"
+          },
+          "price": 8.50,
+          "allergens": ["gluten"],
+          "dietary": [],
+          "image": "/images/menu/leberwurst.jpg"
+        },
+        {
+          "id": "app_002",
+          "name": {
+            "de": "Rheinischer Sauerbraten-Carpaccio",
+            "en": "Rhineland Sauerbraten Carpaccio"
+          },
+          "description": {
+            "de": "Dünn geschnittener marinierter Rinderbraten mit Röstzwiebeln",
+            "en": "Thinly sliced marinated beef roast with roasted onions"
+          },
+          "price": 12.90,
+          "allergens": [],
+          "dietary": [],
+          "image": "/images/menu/carpaccio.jpg"
+        }
+      ]
+    },
+    "mains": {
+      "de": "Hauptgerichte",
+      "en": "Main Courses",
+      "items": [
+        {
+          "id": "main_001",
+          "name": {
+            "de": "Sauerbraten mit Rotkohl",
+            "en": "Sauerbraten with Red Cabbage"
+          },
+          "description": {
+            "de": "Klassischer rheinischer Sauerbraten mit hausgemachtem Rotkohl und Kartoffelklößen",
+            "en": "Classic Rhineland sauerbraten with homemade red cabbage and potato dumplings"
+          },
+          "price": 18.90,
+          "allergens": ["gluten"],
+          "dietary": [],
+          "image": "/images/menu/sauerbraten.jpg"
+        },
+        {
+          "id": "main_002",
+          "name": {
+            "de": "Schweinebraten mit Sauerkraut",
+            "en": "Pork Roast with Sauerkraut"
+          },
+          "description": {
+            "de": "Knuspriger Schweinebraten mit traditionellem Sauerkraut und Salzkartoffeln",
+            "en": "Crispy pork roast with traditional sauerkraut and boiled potatoes"
+          },
+          "price": 16.50,
+          "allergens": [],
+          "dietary": [],
+          "image": "/images/menu/schweinebraten.jpg"
+        },
+        {
+          "id": "main_003",
+          "name": {
+            "de": "Rheinischer Himmel un Ääd",
+            "en": "Rhineland Heaven and Earth"
+          },
+          "description": {
+            "de": "Kartoffel-Apfel-Püree mit Blutwurst und Röstzwiebeln",
+            "en": "Potato-apple mash with blood sausage and roasted onions"
+          },
+          "price": 14.80,
+          "allergens": ["gluten"],
+          "dietary": [],
+          "image": "/images/menu/himmel-erd.jpg"
+        }
+      ]
+    },
+    "desserts": {
+      "de": "Nachspeisen",
+      "en": "Desserts",
+      "items": [
+        {
+          "id": "dess_001",
+          "name": {
+            "de": "Schwarzwälder Kirschtorte",
+            "en": "Black Forest Cake"
+          },
+          "description": {
+            "de": "Klassische Schwarzwälder Kirschtorte mit Sahne und Kirschen",
+            "en": "Classic Black Forest cake with cream and cherries"
+          },
+          "price": 6.90,
+          "allergens": ["gluten", "eggs", "dairy"],
+          "dietary": [],
+          "image": "/images/menu/schwarzwaelder.jpg"
+        },
+        {
+          "id": "dess_002",
+          "name": {
+            "de": "Apfelstrudel mit Vanillesoße",
+            "en": "Apple Strudel with Vanilla Sauce"
+          },
+          "description": {
+            "de": "Hausgemachter Apfelstrudel mit warmer Vanillesoße",
+            "en": "Homemade apple strudel with warm vanilla sauce"
+          },
+          "price": 5.50,
+          "allergens": ["gluten", "eggs", "dairy"],
+          "dietary": [],
+          "image": "/images/menu/apfelstrudel.jpg"
+        }
+      ]
+    },
+    "beverages": {
+      "de": "Getränke",
+      "en": "Beverages",
+      "items": [
+        {
+          "id": "bev_001",
+          "name": {
+            "de": "Kölsch (0,2l)",
+            "en": "Kölsch (0.2l)"
+          },
+          "description": {
+            "de": "Traditionelles Kölner Bier",
+            "en": "Traditional Cologne beer"
+          },
+          "price": 2.80,
+          "allergens": ["gluten"],
+          "dietary": [],
+          "image": "/images/menu/koelsch.jpg"
+        },
+        {
+          "id": "bev_002",
+          "name": {
+            "de": "Rheinwein Riesling (0,2l)",
+            "en": "Rhine Wine Riesling (0.2l)"
+          },
+          "description": {
+            "de": "Trockener Riesling aus dem Rheintal",
+            "en": "Dry Riesling from the Rhine Valley"
+          },
+          "price": 4.50,
+          "allergens": [],
+          "dietary": [],
+          "image": "/images/menu/riesling.jpg"
+        },
+        {
+          "id": "bev_003",
+          "name": {
+            "de": "Apfelschorle (0,3l)",
+            "en": "Apple Spritzer (0.3l)"
+          },
+          "description": {
+            "de": "Erfrischende Apfelschorle",
+            "en": "Refreshing apple spritzer"
+          },
+          "price": 3.20,
+          "allergens": [],
+          "dietary": ["vegan"],
+          "image": "/images/menu/apfelschorle.jpg"
+        }
+      ]
+    }
+  }
+}

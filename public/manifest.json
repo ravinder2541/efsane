@@ -1,0 +1,93 @@
+{
+  "name": "Efsane Events & Gasthaus",
+  "short_name": "Efsane",
+  "description": "Premium Turkish Restaurant & Event Venue in Germany - Authentic Cuisine, Private Events, Professional Catering",
+  "keywords": [
+    "türkisches restaurant",
+    "turkish restaurant", 
+    "event venue germany",
+    "private dining",
+    "catering service",
+    "authentic turkish cuisine",
+    "restaurant reservations",
+    "turkish food",
+    "events location",
+    "gasthaus",
+    "efsane"
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "lang": "de",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["food", "restaurants", "events", "catering"],
+  "shortcuts": [
+    {
+      "name": "Menu",
+      "short_name": "Speisekarte",
+      "description": "View our authentic Turkish menu",
+      "url": "/speisekarte",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "Reservations", 
+      "short_name": "Reservierung",
+      "description": "Book your table online",
+      "url": "/reservierung",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Kontakt", 
+      "description": "Get in touch with us",
+      "url": "/kontakt",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "32x32"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "platform": "wide",
+      "label": "Efsane Events & Gasthaus Homepage"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "dir": "ltr",
+  "iarc_rating_id": "",
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

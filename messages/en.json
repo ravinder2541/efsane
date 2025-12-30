@@ -1,0 +1,158 @@
+{
+  "navigation": {
+    "home": "Home",
+    "history": "History",
+    "menu": "Menu",
+    "contact": "Contact",
+    "reservation": "Reservation",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to Efsane Gasthaus Rudolph",
+      "subtitle": "Traditional German cuisine since 1620",
+      "description": "Experience authentic German hospitality in our historic gasthaus. Perfect for business meetings and private celebrations.",
+      "cta": "Make a reservation"
+    },
+    "features": {
+      "capacity": {
+        "title": "Up to 300 guests",
+        "description": "Spacious facilities for your events"
+      },
+      "parking": {
+        "title": "70+ parking spaces",
+        "description": "Convenient arrival for all your guests"
+      },
+      "cuisine": {
+        "title": "Regional specialties",
+        "description": "Authentic German cuisine with a modern touch"
+      },
+      "events": {
+        "title": "Business & private events",
+        "description": "The perfect place for special occasions"
+      }
+    },
+    "about": {
+      "title": "About us",
+      "description": "Efsane Gasthaus Rudolph has been combining traditional German hospitality with modern comfort since 1620. Our restaurant is the ideal place for business meetings, private celebrations, and special occasions."
+    },
+      "cards": {
+      "silvester": {
+        "title": "NEW YEAR'S EVE BUFFET",
+        "line1": "Open festive buffet",
+        "line2": "Traditional & elegant",
+        "time": "Dec 31 | from 5 PM"
+      },
+      "brunch": {
+        "title": "SUNDAY BRUNCH",
+        "line1": "Every Sunday",
+        "line2": "Large brunch from 10 AM – 3 PM",
+        "price": "€17.50 per person"
+      },
+      "football": {
+        "title": "Live Football",
+        "line1": "Bundesliga & Champions League",
+        "line2": "Live on big screen"
+      }
+    },
+    "reserve": "Reserve a table",
+    "note": "Reservation recommended · limited seats"
+  },
+  "history": {
+    "title": "Our History",
+    "subtitle": "Since 1620 - A tradition of hospitality",
+    "content": "Efsane Gasthaus Rudolph looks back on over 400 years of history. Since 1620, we have been delighting our guests with traditional German cuisine and warm hospitality."
+  },
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Regional specialties with tradition",
+    "categories": {
+      "appetizers": "Appetizers",
+      "mains": "Main courses",
+      "desserts": "Desserts",
+      "beverages": "Beverages"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We look forward to hearing from you",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Sorry, an error occurred while sending."
+    },
+    "info": {
+      "address": "Alt Niederhofheim 30, 65835 Liederbach am Taunus",
+      "phone": "06196 23640",
+      "email": "info@efsane-events.de",
+      "hours": "Wed-Sun: 16:00-22:00, Closed Mon-Tue"
+    }
+  },
+  "reservation": {
+    "title": "Reservation",
+    "subtitle": "Reserve your table or event space",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "date": "Date",
+      "time": "Time",
+      "guests": "Number of guests",
+      "eventType": "Type of event",
+      "eventTypes": {
+        "business": "Business meeting",
+        "private": "Private celebration",
+        "celebration": "Special celebration"
+      },
+      "specialRequests": "Special requests",
+      "submit": "Request reservation",
+      "success": "Thank you! Your reservation request has been sent.",
+      "error": "Sorry, an error occurred while sending."
+    },
+    "notification": {
+      "success": {
+        "title": "Reservation Successfully Sent!",
+        "message": "Your reservation request has been successfully submitted. We have sent you a confirmation email and will get back to you within 24 hours.",
+        "emailSent": "Confirmation email sent",
+        "responseTime": "Response within 24 hours",
+        "understood": "Understood"
+      },
+      "error": {
+        "title": "Error Sending Reservation",
+        "message": "Sorry, an error occurred while sending your reservation. Please try again or contact us directly.",
+        "tryAgain": "Try Again"
+      }
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "openingHours": "Opening Hours",
+    "features": "Our Features",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "mondayFriday": "Mon-Fri",
+    "saturdaSunday": "Sat-Sun",
+    "upTo300Guests": "Up to 300 guests",
+    "parkingSpaces": "parking spaces",
+    "regionalSpecialties": "Regional specialties",
+    "businessPrivateEvents": "Business & private events",
+    "copyright": "All rights reserved.",
+    "followUs": "Follow us",
+    "newsletter": "Newsletter",
+    "newsletterText": "Stay informed about events and offers",
+    "subscribe": "Subscribe"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "required": "Required field",
+    "optional": "Optional"
+  }
+}

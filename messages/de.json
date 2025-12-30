@@ -1,0 +1,209 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "history": "Geschichte",
+    "menu": "Speisekarte",
+    "contact": "Kontakt",
+    "reservation": "Reservierung",
+    "language": "Sprache"
+  },
+  "home": {
+    "hero": {
+      "title": "Willkommen im Efsane Gasthaus Rudolph",
+      "subtitle": "Traditionelle deutsche Küche seit 1620",
+      "description": "Erleben Sie authentische deutsche Gastlichkeit in unserem historischen Gasthaus. Perfekt für Geschäftstermine und private Feiern.",
+      "cta": "Jetzt reservieren"
+    },
+    "features": {
+      "capacity": {
+        "title": "Bis zu 300 Gäste",
+        "description": "Großzügige Räumlichkeiten für Ihre Veranstaltungen"
+      },
+      "parking": {
+        "title": "70+ Parkplätze",
+        "description": "Bequeme Anreise für alle Ihre Gäste"
+      },
+      "cuisine": {
+        "title": "Regionale Spezialitäten",
+        "description": "Authentische deutsche Küche mit modernem Touch"
+      },
+      "events": {
+        "title": "Geschäfts- & Privatfeiern",
+        "description": "Der perfekte Ort für besondere Anlässe"
+      }
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Das Efsane Gasthaus Rudolph verbindet seit 1620 traditionelle deutsche Gastlichkeit mit modernem Komfort. Unser Restaurant ist der ideale Ort für Geschäftstermine, private Feiern und besondere Anlässe."
+    },
+    "cards": {
+      "silvester": {
+        "title": "SILVESTERBUFFET",
+        "line1": "Offenes festliches Buffet",
+        "line2": "Traditionell & edel",
+        "time": "31.12. | ab 17 Uhr"
+      },
+      "brunch": {
+        "title": "SONNTAGSBRUNCH",
+        "line1": "Jeden Sonntag",
+        "line2": "Großer Brunch von 10–15 Uhr",
+        "price": "17,50 € p. P."
+      },
+      "football": {
+        "title": "Fußball Live",
+        "line1": "Bundesliga & Champions League",
+        "line2": "Live auf großer Leinwand"
+      }
+    },
+    "reserve": "Jetzt Tisch reservieren",
+    "note": "Reservierung empfohlen · begrenzte Plätze"
+  },
+  "history": {
+    "title": "Unsere Geschichte",
+    "subtitle": "Seit 1620 - Eine Tradition der Gastlichkeit",
+    "content": "Das Efsane Gasthaus Rudolph blickt auf über 400 Jahre Geschichte zurück. Seit 1620 verwöhnen wir unsere Gäste mit traditioneller deutscher Küche und herzlicher Gastfreundschaft."
+  },
+  "menu": {
+    "title": "Unsere Speisekarte",
+    "subtitle": "Regionale Spezialitäten mit Tradition",
+    "categories": {
+      "appetizers": "Vorspeisen",
+      "mains": "Hauptgerichte",
+      "desserts": "Nachspeisen",
+      "beverages": "Getränke"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns auf Ihre Nachricht",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+      "error": "Entschuldigung, beim Senden ist ein Fehler aufgetreten."
+    },
+    "info": {
+      "address": "Alt Niederhofheim 30, 65835 Liederbach am Taunus",
+      "phone": "06196 23640",
+      "email": "info@efsane-events.de",
+      "hours": "Mi-So: 16:00-22:00, Mo-Di geschlossen"
+    }
+  },
+  "reservation": {
+    "title": "Reservierung",
+    "subtitle": "Reservieren Sie Ihren Tisch oder Veranstaltungsraum",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "guests": "Anzahl Gäste",
+      "eventType": "Art der Veranstaltung",
+      "eventTypes": {
+        "business": "Geschäftstermin",
+        "private": "Private Feier",
+        "celebration": "Besondere Feier"
+      },
+      "specialRequests": "Besondere Wünsche",
+      "submit": "Reservierung anfragen",
+      "success": "Vielen Dank! Ihre Reservierungsanfrage wurde gesendet.",
+      "error": "Entschuldigung, beim Senden ist ein Fehler aufgetreten."
+    },
+    "notification": {
+      "success": {
+        "title": "Reservierung erfolgreich gesendet!",
+        "message": "Ihre Reservierungsanfrage wurde erfolgreich übermittelt. Wir haben Ihnen eine Bestätigungs-E-Mail gesendet und melden uns innerhalb von 24 Stunden bei Ihnen.",
+        "emailSent": "Bestätigungs-E-Mail wurde gesendet",
+        "responseTime": "Antwort innerhalb von 24 Stunden",
+        "understood": "Verstanden"
+      },
+      "error": {
+        "title": "Fehler beim Senden",
+        "message": "Entschuldigung, beim Senden Ihrer Reservierung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+        "tryAgain": "Erneut versuchen"
+      }
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Kontakt",
+    "openingHours": "Öffnungszeiten",
+    "features": "Unsere Stärken",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "mondayFriday": "Mo-Fr",
+    "saturdaSunday": "Sa-So",
+    "upTo300Guests": "Bis zu 300 Gäste",
+    "parkingSpaces": "Parkplätze",
+    "regionalSpecialties": "Regionale Spezialitäten",
+    "businessPrivateEvents": "Geschäfts- & Privatfeiern",
+    "copyright": "Alle Rechte vorbehalten.",
+    "followUs": "Folgen Sie uns",
+    "newsletter": "Newsletter",
+    "newsletterText": "Bleiben Sie über Events und Angebote informiert",
+    "subscribe": "Anmelden"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "required": "Pflichtfeld",
+    "optional": "Optional"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "reservations": "Reservierungen",
+      "menu": "Menü",
+      "categories": "Kategorien",
+      "logout": "Abmelden",
+      "overview": "Übersicht",
+      "newReservation": "Neue Reservierung hinzufügen",
+      "filterByDate": "Nach Datum filtern",
+      "filterByStatus": "Nach Status filtern",
+      "allStatuses": "Alle Status",
+      "pending": "Ausstehend",
+      "confirmed": "Bestätigt",
+      "cancelled": "Storniert",
+      "completed": "Abgeschlossen",
+      "actions": "Aktionen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "confirm": "Bestätigen",
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "guests": "Gäste",
+      "eventType": "Veranstaltungstyp",
+      "status": "Status",
+      "notes": "Notizen",
+      "specialRequests": "Besondere Wünsche",
+      "createdAt": "Erstellt am",
+      "updatedAt": "Aktualisiert am",
+      "deleteConfirm": "Sind Sie sicher, dass Sie diese Reservierung löschen möchten?",
+      "noReservations": "Keine Reservierungen gefunden",
+      "loadingReservations": "Lade Reservierungen...",
+      "upcomingReservations": "Kommende Reservierungen",
+      "todaysReservations": "Heutige Reservierungen",
+      "newReservationNotification": "Neue Reservierung erhalten!",
+      "soundNotification": "Klick hier für Sound-Benachrichtigung",
+      "editReservation": "Reservierung bearbeiten",
+      "internalNotes": "Interne Notizen",
+      "totalGuests": "Gäste gesamt"
+    },
+    "eventTypes": {
+      "business": "Geschäftstermin", 
+      "private": "Private Feier",
+      "celebration": "Besondere Feier"
+    }
+  }
+}
