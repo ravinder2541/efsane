@@ -225,7 +225,7 @@ export default function Footer() {
                   {locale === "en" ? "Legal Notice" : "Impressum"}
                 </Link>
               </div>
-              <div className="flex items-center justify-center space-x-1 whitespace-nowrap">
+              {/* <div className="flex items-center justify-center space-x-1 whitespace-nowrap">
                 <span className="text-xs opacity-60">Made with</span>
                 <span className="text-red-400 animate-pulse">♥</span>
                 <span className="text-xs opacity-60">
@@ -238,7 +238,7 @@ export default function Footer() {
                     Uen Solutions
                   </a>
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
