@@ -74,13 +74,14 @@ export default function EnglishHomePage() {
 
        {/* Overlay Cards + Overlapping Button */}
       <div className="absolute bottom-20 left-0 right-0 z-30 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto relative text-center">
+        <div className="max-w-4xl mx-auto relative text-center">
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
 
             {/* New Year's Eve Buffet with background image */}
-            <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
+
+            {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
               <div className="absolute inset-0">
                 <Image
                   src="/images/card1.png"
@@ -105,7 +106,7 @@ export default function EnglishHomePage() {
                   <span className="font-semibold">Dec 31 | from 5 PM</span>
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* Sunday Brunch with card2.png background */}
             <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">

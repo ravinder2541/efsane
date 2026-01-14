@@ -102,15 +102,17 @@ export default function HomePage() {
 
         {/* Overlay Cards + Overlapping Button */}
        <div className="absolute bottom-20 left-0 right-0 z-30 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto relative text-center">
+          <div className="max-w-4xl mx-auto relative text-center">
 
             {/* Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+             */}
+            <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
 
               {/* Silvester with background image */}
               {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#3a2a16]"> */}
-              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
-                {/* Background Image */}
+              
+              {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
                 <div className="absolute inset-0">
                   <Image
                     src="/images/card1.png"
@@ -122,7 +124,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-black/30"></div>
                 </div>
 
-                {/* Card content */}
+                
                 <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
                     <BsMagic className="w-5 h-5 sm:w-6 sm:h-6  text-[#623701]" />
@@ -136,7 +138,7 @@ export default function HomePage() {
                     <span className="font-semibold">31.12. | ab 17 Uhr</span>
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               {/* Brunch with card2.png background */}
               <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">

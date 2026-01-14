@@ -167,14 +167,14 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-secondary-400" />
                 <div className="text-sm opacity-80">
-                  <p className="font-medium">Mi-So</p>
+                  <p className="font-medium">Di-So</p>
                   <p>16:00 - 22:00</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-secondary-400" />
                 <div className="text-sm opacity-80">
-                  <p className="font-medium">Mo-Di</p>
+                  <p className="font-medium">Mo</p>
                   <p className="text-red-400">Geschlossen</p>
                 </div>
               </div>
