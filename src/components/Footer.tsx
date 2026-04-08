@@ -177,6 +177,7 @@ export default function Footer() {
                   <p className="font-medium">Mo</p>
                   <p className="text-red-400">Geschlossen</p>
                 </div>
+                
               </div>
             </div>
 
