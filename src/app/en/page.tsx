@@ -125,13 +125,13 @@ export default function EnglishHomePage() {
                 <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
                   <IoRestaurantSharp className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
                   <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
-                    SUNDAY BRUNCH
+                    NOW AVAILABLE
                   </h3>
                 </div>
                 <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-5">
-                  Every Sunday<br />
-                  Big brunch from 10 AM – 3 PM<br />
-                  <span className="font-semibold">€17.50 per person</span>
+                  A new menu featuring traditional Hessian dishes.<br />
+                  Our kitchen is under new management!<br />
+                  {/* <span className="font-semibold">€17.50 per person</span> */}
                 </p>
               </div>
             </div>
@@ -272,8 +272,7 @@ export default function EnglishHomePage() {
                 "Over 400 years of tradition – since 1620."
               </blockquote>
               <p className="text-lg text-gray-700 mb-8">
-                Gasthaus Rudolph produces its Taunus apple wine in its own cider
-                mill. You can expect freshly prepared dishes from the daily
+                Our *Ebbler* is a fine local cider. You can expect freshly prepared dishes from the daily
                 menu, served with family hospitality.
               </p>
               <Link

@@ -157,13 +157,13 @@ export default function HomePage() {
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
                     <IoRestaurantSharp className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
                     <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
-                      SONNTAGSBRUNCH
+                      AB SOFORT BEI UNS
                     </h3>
                   </div>
                   <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-5">
-                    Jeden Sonntag<br />
-                    Großer Brunch von 10–15 Uhr<br />
-                    <span className="font-semibold">17,50 € p. P.</span>
+                   Neue Speisekarte mit traditionellen hessischen Speisen.<br />
+                    Unsere Küche steht unter neuer Leitung!<br />
+                    {/* <span className="font-semibold">17,50 € p. P.</span> */}
                   </p>
                 </div>
               </div>
@@ -290,8 +290,11 @@ export default function HomePage() {
                 „Über 400 Jahre Tradition – seit 1620."
               </blockquote>
               <p className="text-lg text-gray-700 mb-8">
-                Das Gasthaus Rudolph stellt seinen Taunus-Apfelwein in der hauseigenen Kelterei her. Es erwarten Sie täglich frisch zubereitete Speisen von der Tageskarte, serviert in familiärer Gastlichkeit.
+                Unser Ebbler ist en gude Schoppe aus der Region. Es erwarten Sie täglich frisch zubereitete Speisen von der Tageskarte, serviert in familiärer Gastlichkeit.
               </p>
+              {/* <p className="text-lg text-gray-700 mb-8">
+                Das Gasthaus Rudolph stellt seinen Taunus-Apfelwein in der hauseigenen Kelterei her. Es erwarten Sie täglich frisch zubereitete Speisen von der Tageskarte, serviert in familiärer Gastlichkeit.
+              </p> */}
               <Link href="/geschichte" className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors duration-200">
                 Unsere Geschichte
               </Link>

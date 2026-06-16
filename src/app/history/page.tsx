@@ -95,8 +95,11 @@ export default function HistoryPage() {
                     Tradition & Modernity United
                   </h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    Gasthaus Rudolph produces its Taunus apple wine in its own cider mill. Fresh daily dishes from the daily menu await you, served with familial hospitality.
+                    Our *Ebbler* is a fine local cider. Fresh daily dishes from the daily menu await you, served with familial hospitality.
                   </p>
+                  {/* <p className="text-lg text-gray-700 mb-6">
+                    Gasthaus Rudolph produces its Taunus apple wine in its own cider mill. Fresh daily dishes from the daily menu await you, served with familial hospitality.
+                  </p> */}
                   <p className="text-lg text-gray-700">
                     Whether birthday, anniversary, wedding, other family celebrations, barbecue party or corporate event – Gasthaus Rudolph offers the ideal setting for every celebration and event. The restaurant also offers catering services.
                   </p>

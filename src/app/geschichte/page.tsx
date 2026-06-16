@@ -95,7 +95,7 @@ export default function GeschichtePage() {
                     Tradition & Moderne vereint
                   </h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    Das Gasthaus Rudolph stellt seinen Taunus-Apfelwein in der hauseigenen Kelterei her. Es erwarten Sie täglich frisch zubereitete Speisen von der Tageskarte, serviert in familiärer Gastlichkeit.
+                    Unser Ebbler ist en gude Schoppe aus der Region. Es erwarten Sie täglich frisch zubereitete Speisen von der Tageskarte, serviert in familiärer Gastlichkeit.
                   </p>
                   <p className="text-lg text-gray-700">
                     Ob Geburtstag, Jubiläum, Hochzeit, andere Familienfeste, Grillparty oder Firmenfest – das Gasthaus Rudolph bietet für jede Feier und jedes Event den idealen Rahmen. Zudem bietet das Gasthaus einen Partyservice.
