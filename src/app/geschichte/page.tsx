@@ -1,20 +1,21 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Geschichte',
-  description: 'Erfahren Sie mehr über die über 400-jährige Geschichte des Efsane Gasthaus Rudolph. Seit 1620 traditionelle deutsche Gastlichkeit.',
+  title: "Geschichte",
+  description:
+    "Erfahren Sie mehr über die über 400-jährige Geschichte des Efsane Gasthaus Rudolph. Seit 1620 traditionelle deutsche Gastlichkeit.",
   alternates: {
-    canonical: 'https://efsane-events.de/geschichte',
+    canonical: "https://efsane-events.de/geschichte",
     languages: {
-      'en': 'https://efsane-events.de/history',
+      en: "https://efsane-events.de/history",
     },
   },
-}
+};
 
 export default function GeschichtePage() {
   return (
@@ -31,7 +32,10 @@ export default function GeschichtePage() {
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center text-white">
-            <Link href="/" className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors">
+            <Link
+              href="/"
+              className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Zurück zur Startseite
             </Link>
@@ -57,10 +61,19 @@ export default function GeschichtePage() {
                     Das Gasthaus Rudolph – über 400 Jahre Tradition
                   </h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    Die Geschichte des Gasthauses Rudolph reicht bis in das Jahr 1620 zurück. Damals wurde das Fachwerkhaus im historischen Ortskern von Liederbach erbaut. Die Amtsrichtsmänner Hofmann lebten hier lange Jahre mit ihren Familien.
+                    Die Geschichte des Gasthauses Rudolph reicht bis in das Jahr
+                    1620 zurück. Damals wurde das Fachwerkhaus im historischen
+                    Ortskern von Liederbach erbaut. Die Amtsrichtsmänner Hofmann
+                    lebten hier lange Jahre mit ihren Familien.
                   </p>
                   <p className="text-lg text-gray-700 mb-6">
-                    Seit 1620 steht das Fachwerkhaus im historischen Ortskern von Niederhofheim – heute Liederbach am Taunus, im Herzen des Rhein‑Main‑Gebiets. Ursprünglich Sitz der Amtsrichte‑Familie Hofmann, hat sich das Gasthaus Rudolph über die Jahrhunderte hinweg als feste Größe der regionalen Gastlichkeit etabliert — und gilt als eines der ältesten Häuser im Ort.
+                    Seit 1620 steht das Fachwerkhaus im historischen Ortskern
+                    von Niederhofheim – heute Liederbach am Taunus, im Herzen
+                    des Rhein‑Main‑Gebiets. Ursprünglich Sitz der
+                    Amtsrichte‑Familie Hofmann, hat sich das Gasthaus Rudolph
+                    über die Jahrhunderte hinweg als feste Größe der regionalen
+                    Gastlichkeit etabliert — und gilt als eines der ältesten
+                    Häuser im Ort.
                   </p>
                 </div>
                 <div>
@@ -95,11 +108,69 @@ export default function GeschichtePage() {
                     Tradition & Moderne vereint
                   </h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    Unser Ebbler ist en gude Schoppe aus der Region. Es erwarten Sie täglich frisch zubereitete Speisen von der Tageskarte, serviert in familiärer Gastlichkeit.
+                    Unser Ebbler ist en gude Schoppe aus der Region. Es erwarten
+                    Sie täglich frisch zubereitete Speisen von der Tageskarte,
+                    serviert in familiärer Gastlichkeit.
                   </p>
                   <p className="text-lg text-gray-700">
-                    Ob Geburtstag, Jubiläum, Hochzeit, andere Familienfeste, Grillparty oder Firmenfest – das Gasthaus Rudolph bietet für jede Feier und jedes Event den idealen Rahmen. Zudem bietet das Gasthaus einen Partyservice.
+                    Ob Geburtstag, Jubiläum, Hochzeit, andere Familienfeste,
+                    Grillparty oder Firmenfest – das Gasthaus Rudolph bietet für
+                    jede Feier und jedes Event den idealen Rahmen. Zudem bietet
+                    das Gasthaus einen Partyservice.
                   </p>
+                </div>
+              </div>
+
+              {/* what you can expect from us section */}
+
+              <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
+                {/* 1. Content Container (Mobil: Oben | Desktop: Links) */}
+                <div className="w-full">
+                  <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">
+                    Was Sie bei uns erwartet:
+                  </h2>
+
+                  <div className="space-y-4 text-lg text-gray-700">
+                    <p>
+                      Klassische hessische Spezialitäten. Täglich wechselnde
+                      Tagesangebote.
+                    </p>
+
+                    <p>
+                      Hausgemachter Sonntagsbraten. Individuelle Buffets und
+                      Menüs für Hochzeiten, Jubiläen, Feiern für Privat und
+                      Gewerbe u.v.m.
+                    </p>
+
+                    <p>
+                      Ebenso kleine Speisen und Fingerfood, wie belegte
+                      Brötchen, Canapés oder Suppen – z. B. für Trauerfeiern,
+                      Büropartys oder Geschäftseröffnungen.
+                    </p>
+
+                    <p>
+                      Für zielorientierte und Budgetgerechte Beratungen steht
+                      Ihnen unser Küchenchef gerne zur Verfügung.
+                    </p>
+
+                    <p>
+                      Unser Küchenchef bringt über 40 Jahre Erfahrung mit und
+                      sorgt gemeinsam mit unserem freundlichen Servicepersonal
+                      dafür, dass Ihr Besuch bei uns kulinarisch unvergesslich
+                      wird.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 2. Image Container (Mobil: Unten | Desktop: Rechts) */}
+                <div className="flex justify-center items-center w-full">
+                  <Image
+                    src="/images/about_us.webp"
+                    alt="Traditionelle hessische Gastfreundschaft"
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-xl object-cover w-full h-96"
+                  />
                 </div>
               </div>
 
@@ -108,19 +179,29 @@ export default function GeschichtePage() {
                   Unsere Räumlichkeiten heute
                 </h2>
                 <p className="text-lg text-gray-700 mb-6 text-center">
-                  Neben dem großen Biergarten bietet das Gasthaus Rudolph zahlreiche Räumlichkeiten im Haus.
+                  Neben dem großen Biergarten bietet das Gasthaus Rudolph
+                  zahlreiche Räumlichkeiten im Haus.
                 </p>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Wintergarten</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Wintergarten
+                    </h3>
                     <p className="text-gray-700">
-                      Open Air-Gefühl vermittelt der großzügige wetterunabhängige Wintergarten: Das Dach lässt sich öffnen und bietet so den gemütlichen Rahmen für ein geselliges Zusammensein. Bis zu 100 Personen finden hier Platz.
+                      Open Air-Gefühl vermittelt der großzügige
+                      wetterunabhängige Wintergarten: Das Dach lässt sich öffnen
+                      und bietet so den gemütlichen Rahmen für ein geselliges
+                      Zusammensein. Bis zu 100 Personen finden hier Platz.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Biergarten</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Biergarten
+                    </h3>
                     <p className="text-gray-700">
-                      Selbstverständlich können Sie im Sommer auch den nicht überdachten rustikalen Biergarten für Ihre Veranstaltung oder à la carte nutzen.
+                      Selbstverständlich können Sie im Sommer auch den nicht
+                      überdachten rustikalen Biergarten für Ihre Veranstaltung
+                      oder à la carte nutzen.
                     </p>
                   </div>
                 </div>
@@ -133,5 +214,5 @@ export default function GeschichtePage() {
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }

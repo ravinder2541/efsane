@@ -167,7 +167,7 @@ export default function ReservierungPage() {
             <span className="text-amber-400">Reservierung</span>
           </h1>
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-            Reservieren Sie Ihren Tisch oder Veranstaltungsraum
+            An den Aktionstagen ist es vorteilhaft,  wenn Sie rechtzeitig reservieren. 
           </p>
         </div>
       </section>
@@ -440,22 +440,36 @@ export default function ReservierungPage() {
               </div>
 
               {/* Opening Hours */}
-              <div className="mt-6 p-4 bg-primary-800 text-white rounded-xl">
-                <h3 className="font-serif text-lg font-semibold mb-3 flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
-                  Öffnungszeiten
-                </h3>
-                <div className="text-sm space-y-1">
-                  <div className="flex justify-between">
-                    <span>Mittwoch - Sonntag:</span>
-                    <span>16:00 - 22:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Montag - Dienstag:</span>
-                    <span className="text-red-400">Geschlossen</span>
-                  </div>
-                </div>
-              </div>
+             <div className="mt-6 p-4 bg-primary-800 text-white rounded-xl">
+  <h3 className="font-serif text-lg font-semibold mb-3 flex items-center">
+    <Clock className="w-5 h-5 mr-2" />
+    Öffnungszeiten
+  </h3>
+
+  <div className="text-sm space-y-2">
+    <div className="flex justify-between">
+      <span>Dienstag - Samstag:</span>
+      <span>16:00 - 22:00</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Sonntag (Mai - Okt):</span>
+      <span>12:00 - 22:00</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Sonntag (Nov - Apr):</span>
+      <span>11:00 - 16:00</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Montag:</span>
+      <span className="text-red-400 font-semibold">
+        Geschlossen
+      </span>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </div>

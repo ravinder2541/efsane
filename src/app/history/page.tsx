@@ -1,20 +1,21 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'History',
-  description: 'Learn more about the over 400-year history of Efsane Gasthaus Rudolph. Traditional German hospitality since 1620.',
+  title: "History",
+  description:
+    "Learn more about the over 400-year history of Efsane Gasthaus Rudolph. Traditional German hospitality since 1620.",
   alternates: {
-    canonical: 'https://efsane-events.de/history',
+    canonical: "https://efsane-events.de/history",
     languages: {
-      'de': 'https://efsane-events.de/geschichte',
+      de: "https://efsane-events.de/geschichte",
     },
   },
-}
+};
 
 export default function HistoryPage() {
   return (
@@ -31,7 +32,10 @@ export default function HistoryPage() {
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center text-white">
-            <Link href="/en" className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors">
+            <Link
+              href="/en"
+              className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to home
             </Link>
@@ -57,10 +61,19 @@ export default function HistoryPage() {
                     Gasthaus Rudolph – over 400 years of tradition
                   </h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    The history of Gasthaus Rudolph dates back to 1620. At that time, the half-timbered house was built in the historic center of Liederbach. The magistrate officials Hofmann lived here for many years with their families.
+                    The history of Gasthaus Rudolph dates back to 1620. At that
+                    time, the half-timbered house was built in the historic
+                    center of Liederbach. The magistrate officials Hofmann lived
+                    here for many years with their families.
                   </p>
                   <p className="text-lg text-gray-700 mb-6">
-                    Since 1620, the half-timbered house has stood in the historic center of Niederhofheim – now Liederbach am Taunus, in the heart of the Rhine-Main region. Originally the seat of the magistrate Hofmann family, Gasthaus Rudolph has established itself over the centuries as a mainstay of regional hospitality — and is considered one of the oldest houses in the village.
+                    Since 1620, the half-timbered house has stood in the
+                    historic center of Niederhofheim – now Liederbach am Taunus,
+                    in the heart of the Rhine-Main region. Originally the seat
+                    of the magistrate Hofmann family, Gasthaus Rudolph has
+                    established itself over the centuries as a mainstay of
+                    regional hospitality — and is considered one of the oldest
+                    houses in the village.
                   </p>
                 </div>
                 <div>
@@ -95,14 +108,68 @@ export default function HistoryPage() {
                     Tradition & Modernity United
                   </h2>
                   <p className="text-lg text-gray-700 mb-6">
-                    Our *Ebbler* is a fine local cider. Fresh daily dishes from the daily menu await you, served with familial hospitality.
+                    Our *Ebbler* is a fine local cider. Fresh daily dishes from
+                    the daily menu await you, served with familial hospitality.
                   </p>
                   {/* <p className="text-lg text-gray-700 mb-6">
                     Gasthaus Rudolph produces its Taunus apple wine in its own cider mill. Fresh daily dishes from the daily menu await you, served with familial hospitality.
                   </p> */}
                   <p className="text-lg text-gray-700">
-                    Whether birthday, anniversary, wedding, other family celebrations, barbecue party or corporate event – Gasthaus Rudolph offers the ideal setting for every celebration and event. The restaurant also offers catering services.
+                    Whether birthday, anniversary, wedding, other family
+                    celebrations, barbecue party or corporate event – Gasthaus
+                    Rudolph offers the ideal setting for every celebration and
+                    event. The restaurant also offers catering services.
                   </p>
+                </div>
+              </div>
+
+              {/* what you expect from us section */}
+
+              <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
+                {/* 1. Content Container (Mobile: Upar | Desktop: Left side) */}
+                <div className="w-full">
+                  <h2 className="font-serif text-3xl font-bold text-gray-900 mb-6">
+                    What You Can Expect From Us
+                  </h2>
+
+                  <div className="space-y-4 text-lg text-gray-700">
+                    <p>
+                      Traditional Hessian specialities, daily changing specials
+                      and homemade Sunday roast.
+                    </p>
+
+                    <p>
+                      Bespoke buffets and set menus for weddings, anniversaries,
+                      private celebrations, corporate events and much more.
+                    </p>
+
+                    <p>
+                      We also offer light bites and finger food such as open
+                      sandwiches, canapés and soups.
+                    </p>
+
+                    <p>
+                      Our head chef is happy to provide tailored advice to suit
+                      your needs and budget.
+                    </p>
+
+                    <p>
+                      With over 40 years of experience, our head chef and
+                      friendly service team ensure a memorable culinary
+                      experience.
+                    </p>
+                  </div>
+                </div>
+
+                {/* 2. Image Container (Mobile: Neeche | Desktop: Right side) */}
+                <div className="flex justify-center items-center w-full">
+                  <Image
+                    src="/images/about_us.webp"
+                    alt="Traditional Hessian Hospitality"
+                    width={600}
+                    height={400}
+                    className="rounded-lg shadow-xl object-cover w-full h-96"
+                  />
                 </div>
               </div>
 
@@ -111,19 +178,28 @@ export default function HistoryPage() {
                   Our facilities today
                 </h2>
                 <p className="text-lg text-gray-700 mb-6 text-center">
-                  In addition to the large beer garden, Gasthaus Rudolph offers numerous rooms in the house.
+                  In addition to the large beer garden, Gasthaus Rudolph offers
+                  numerous rooms in the house.
                 </p>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Winter Garden</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Winter Garden
+                    </h3>
                     <p className="text-gray-700">
-                      The spacious weather-independent winter garden conveys an open-air feeling: The roof can be opened and thus provides a cozy setting for a social gathering. Up to 100 people can find space here.
+                      The spacious weather-independent winter garden conveys an
+                      open-air feeling: The roof can be opened and thus provides
+                      a cozy setting for a social gathering. Up to 100 people
+                      can find space here.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Beer Garden</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      Beer Garden
+                    </h3>
                     <p className="text-gray-700">
-                      Of course, in summer you can also use the uncovered rustic beer garden for your event or à la carte dining.
+                      Of course, in summer you can also use the uncovered rustic
+                      beer garden for your event or à la carte dining.
                     </p>
                   </div>
                 </div>
@@ -136,5 +212,5 @@ export default function HistoryPage() {
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }

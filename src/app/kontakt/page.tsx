@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { Turnstile } from '@marsidev/react-turnstile'
-import Image from 'next/image'
-import Link from 'next/link'
-import StructuredData from '@/components/StructuredData'
-import FAQSchema from '@/components/FAQSchema'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Turnstile } from "@marsidev/react-turnstile";
+import Image from "next/image";
+import Link from "next/link";
+import StructuredData from "@/components/StructuredData";
+import FAQSchema from "@/components/FAQSchema";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import {
   MapPin,
   Phone,
@@ -19,123 +19,125 @@ import {
   ArrowLeft,
   Send,
   CheckCircle,
-  AlertCircle
-} from 'lucide-react'
+  AlertCircle,
+} from "lucide-react";
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name muss mindestens 2 Zeichen haben'),
-  email: z.string().email('Bitte geben Sie eine gültige E-Mail-Adresse ein'),
+  name: z.string().min(2, "Name muss mindestens 2 Zeichen haben"),
+  email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
   phone: z.string().optional(),
-  subject: z.string().min(5, 'Betreff muss mindestens 5 Zeichen haben'),
-  message: z.string().min(10, 'Nachricht muss mindestens 10 Zeichen haben'),
-})
+  subject: z.string().min(5, "Betreff muss mindestens 5 Zeichen haben"),
+  message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen haben"),
+});
 
-type ContactFormData = z.infer<typeof contactSchema>
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function KontaktPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema)
-  })
+    resolver: zodResolver(contactSchema),
+  });
 
   const navigationMessages = {
-    home: 'Startseite',
-    history: 'Geschichte',
-    menu: 'Speisekarte',
-    contact: 'Kontakt',
-    reservation: 'Reservierung'
-  }
+    home: "Startseite",
+    history: "Geschichte",
+    menu: "Speisekarte",
+    contact: "Kontakt",
+    reservation: "Reservierung",
+  };
 
   const footerMessages = {
-    navigation: 'Navigation',
-    contact: 'Kontakt',
-    openingHours: 'Öffnungszeiten',
-    features: 'Unsere Stärken',
-    home: 'Startseite',
-    history: 'Geschichte',
-    menu: 'Speisekarte',
-    contactPage: 'Kontakt',
-    reservation: 'Reservierung',
-    address: 'Alt Niederhofheim 30, 65835 Liederbach am Taunus',
-    phone: '06196 23640',
-    email: 'info@efsane-events.de',
-    mondayFriday: 'Di-So',
-    saturdaSunday: 'Montag',
-    upTo300Guests: 'Bis zu 300 Gäste',
-    parkingSpaces: 'Parkplätze',
-    regionalSpecialties: 'Regionale Spezialitäten',
-    businessPrivateEvents: 'Geschäfts- & Privatfeiern',
-    copyright: 'Alle Rechte vorbehalten.',
-    followUs: 'Folgen Sie uns',
-    newsletter: 'Newsletter',
-    newsletterText: 'Bleiben Sie über Events und Angebote informiert',
-    subscribe: 'Anmelden'
-  }
+    navigation: "Navigation",
+    contact: "Kontakt",
+    openingHours: "Öffnungszeiten",
+    features: "Unsere Stärken",
+    home: "Startseite",
+    history: "Geschichte",
+    menu: "Speisekarte",
+    contactPage: "Kontakt",
+    reservation: "Reservierung",
+    address: "Alt Niederhofheim 30, 65835 Liederbach am Taunus",
+    phone: "06196 23640",
+    email: "info@efsane-events.de",
+    mondayFriday: "Di-So",
+    saturdaSunday: "Montag",
+    upTo300Guests: "Bis zu 300 Gäste",
+    parkingSpaces: "Parkplätze",
+    regionalSpecialties: "Regionale Spezialitäten",
+    businessPrivateEvents: "Geschäfts- & Privatfeiern",
+    copyright: "Alle Rechte vorbehalten.",
+    followUs: "Folgen Sie uns",
+    newsletter: "Newsletter",
+    newsletterText: "Bleiben Sie über Events und Angebote informiert",
+    subscribe: "Anmelden",
+  };
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       // Verify CAPTCHA if enabled
       if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && turnstileToken) {
-        const captchaResponse = await fetch('/api/verify-turnstile', {
-          method: 'POST',
+        const captchaResponse = await fetch("/api/verify-turnstile", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ token: turnstileToken }),
-        })
+        });
 
         if (!captchaResponse.ok) {
-          setSubmitStatus('error')
-          setIsSubmitting(false)
-          return
+          setSubmitStatus("error");
+          setIsSubmitting(false);
+          return;
         }
       }
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
+      });
 
       if (response.ok) {
-        setSubmitStatus('success')
-        reset()
-        setTurnstileToken(null)
+        setSubmitStatus("success");
+        reset();
+        setTurnstileToken(null);
       } else {
-        setSubmitStatus('error')
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus('error')
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen">
       <StructuredData type="contact" />
-      <StructuredData 
-        type="breadcrumb" 
+      <StructuredData
+        type="breadcrumb"
         breadcrumbs={[
-          { name: 'Home', url: '/' },
-          { name: 'Kontakt', url: '/kontakt' }
-        ]} 
+          { name: "Home", url: "/" },
+          { name: "Kontakt", url: "/kontakt" },
+        ]}
       />
       <FAQSchema />
-      
+
       {/* Navigation */}
       <Navigation />
 
@@ -150,7 +152,10 @@ export default function KontaktPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-10"></div>
         <div className="relative z-20 text-center text-white px-4">
-          <Link href="/" className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors">
+          <Link
+            href="/"
+            className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Zurück zur Startseite
           </Link>
@@ -172,18 +177,19 @@ export default function KontaktPage() {
               <h2 className="font-serif text-3xl font-bold text-primary-700 mb-6">
                 Schreiben Sie uns
               </h2>
-              
-              {submitStatus === 'success' && (
+
+              {submitStatus === "success" && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-center animate-fade-in">
                   <CheckCircle className="w-5 h-5 mr-2" />
                   Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
                 </div>
               )}
 
-              {submitStatus === 'error' && (
+              {submitStatus === "error" && (
                 <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg flex items-center animate-fade-in">
                   <AlertCircle className="w-5 h-5 mr-2" />
-                  Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.
+                  Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte
+                  versuchen Sie es erneut.
                 </div>
               )}
 
@@ -195,7 +201,7 @@ export default function KontaktPage() {
                   <input
                     type="text"
                     id="name"
-                    {...register('name')}
+                    {...register("name")}
                     className="form-input"
                     placeholder="Ihr vollständiger Name"
                   />
@@ -211,7 +217,7 @@ export default function KontaktPage() {
                   <input
                     type="email"
                     id="email"
-                    {...register('email')}
+                    {...register("email")}
                     className="form-input"
                     placeholder="ihre.email@beispiel.de"
                   />
@@ -227,7 +233,7 @@ export default function KontaktPage() {
                   <input
                     type="tel"
                     id="phone"
-                    {...register('phone')}
+                    {...register("phone")}
                     className="form-input"
                     placeholder="06196 23640"
                   />
@@ -243,7 +249,7 @@ export default function KontaktPage() {
                   <input
                     type="text"
                     id="subject"
-                    {...register('subject')}
+                    {...register("subject")}
                     className="form-input"
                     placeholder="Worum geht es in Ihrer Nachricht?"
                   />
@@ -258,7 +264,7 @@ export default function KontaktPage() {
                   </label>
                   <textarea
                     id="message"
-                    {...register('message')}
+                    {...register("message")}
                     className="form-textarea"
                     placeholder="Ihre Nachricht an uns..."
                     rows={6}
@@ -282,7 +288,11 @@ export default function KontaktPage() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
+                  disabled={
+                    isSubmitting ||
+                    (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY &&
+                      !turnstileToken)
+                  }
                   className="btn-primary w-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover-glow"
                 >
                   {isSubmitting ? (
@@ -305,17 +315,21 @@ export default function KontaktPage() {
               <h2 className="font-serif text-3xl font-bold text-primary-700 mb-6">
                 Kontaktinformationen
               </h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-700 mb-1">Adresse</h3>
+                    <h3 className="font-semibold text-primary-700 mb-1">
+                      Adresse
+                    </h3>
                     <p className="text-gray-600">
-                      Alt Niederhofheim 30<br />
-                      65835 Liederbach am Taunus<br />
+                      Alt Niederhofheim 30
+                      <br />
+                      65835 Liederbach am Taunus
+                      <br />
                       Deutschland
                     </p>
                   </div>
@@ -326,8 +340,13 @@ export default function KontaktPage() {
                     <Phone className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-700 mb-1">Telefon</h3>
-                    <a href="tel:+4961962364" className="text-gray-600 hover:text-primary-600 transition-colors">
+                    <h3 className="font-semibold text-primary-700 mb-1">
+                      Telefon
+                    </h3>
+                    <a
+                      href="tel:+4961962364"
+                      className="text-gray-600 hover:text-primary-600 transition-colors"
+                    >
                       06196 23640
                     </a>
                   </div>
@@ -338,8 +357,13 @@ export default function KontaktPage() {
                     <Mail className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-700 mb-1">E-Mail</h3>
-                    <a href="mailto:info@efsane-events.de" className="text-gray-600 hover:text-primary-600 transition-colors">
+                    <h3 className="font-semibold text-primary-700 mb-1">
+                      E-Mail
+                    </h3>
+                    <a
+                      href="mailto:info@efsane-events.de"
+                      className="text-gray-600 hover:text-primary-600 transition-colors"
+                    >
                       info@efsane-events.de
                     </a>
                   </div>
@@ -350,10 +374,22 @@ export default function KontaktPage() {
                     <Clock className="w-6 h-6 text-primary-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-primary-700 mb-1">Öffnungszeiten</h3>
-                    <div className="text-gray-600">
-                      <p>Mittwoch - Sonntag: 16:00 - 22:00</p>
-                      <p className="text-red-600">Montag - Dienstag: Geschlossen</p>
+                    <h3 className="font-semibold text-primary-700 mb-1">
+                      Öffnungszeiten
+                    </h3>
+                    <div className="text-gray-600 space-y-1">
+                      <p>
+                        <strong>Montag:</strong>  <span className="text-red-600">Geschlossen</span>
+                      </p>
+                      <p>
+                        <strong>Dienstag - Samstag:</strong> 16:00 - 22:00
+                      </p>
+                      <p>
+                        <strong>Sonntag (Mai - Okt):</strong> 12:00 - 22:00
+                      </p>
+                      <p>
+                        <strong>Sonntag (Nov - Apr):</strong> 11:00 - 16:00
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -391,5 +427,5 @@ export default function KontaktPage() {
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }

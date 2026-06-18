@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   MapPin,
   Phone,
@@ -11,64 +11,91 @@ import {
   Users,
   Car,
   Calendar,
-  ChefHat
-} from 'lucide-react'
+  ChefHat,
+} from "lucide-react";
 
 export default function Footer() {
-  const pathname = usePathname()
-  const locale = pathname.startsWith('/en') ? 'en' : 'de'
-  
+  const pathname = usePathname();
+  const locale = pathname.startsWith("/en") ? "en" : "de";
+
   const messages = {
     de: {
-      navigation: 'Navigation',
-      contact: 'Kontakt',
-      openingHours: 'Öffnungszeiten',
-      home: 'Startseite',
-      history: 'Geschichte',
-      menu: 'Speisekarte',
-      contactPage: 'Kontakt',
-      reservation: 'Reservierung',
-      upTo300Guests: 'Bis zu 300 Gäste',
-      parkingSpaces: 'Parkplätze',
-      regionalSpecialties: 'Regionale Spezialitäten',
-      businessPrivateEvents: 'Geschäfts- & Privatfeiern',
-      copyright: 'Alle Rechte vorbehalten.',
-      newsletter: 'Newsletter',
-      newsletterText: 'Bleiben Sie über Events und Angebote informiert',
-      subscribe: 'Anmelden',
-      since: 'Seit 1620',
-      description: 'Traditionelle deutsche Küche seit 1620. Perfekt für Geschäftstermine und private Feiern mit bis zu 300 Gästen.'
+      navigation: "Navigation",
+      contact: "Kontakt",
+      openingHours: "Öffnungszeiten",
+      home: "Startseite",
+      history: "Geschichte",
+      menu: "Speisekarte",
+      contactPage: "Kontakt",
+      reservation: "Reservierung",
+      upTo300Guests: "Bis zu 300 Gäste",
+      parkingSpaces: "Parkplätze",
+      regionalSpecialties: "Regionale Spezialitäten",
+      businessPrivateEvents: "Geschäfts- & Privatfeiern",
+      copyright: "Alle Rechte vorbehalten.",
+      newsletter: "Newsletter",
+      newsletterText: "Bleiben Sie über Events und Angebote informiert",
+      subscribe: "Anmelden",
+      since: "Seit 1620",
+      description:
+        "Traditionelle deutsche Küche seit 1620. Perfekt für Geschäftstermine und private Feiern mit bis zu 300 Gästen.",
+      openingHoursData: [
+        { day: "Montag", time: "Geschlossen", closed: true },
+        { day: "Dienstag - Samstag", time: "16:00 - 22:00" },
+        { day: "Sonntag Mai - Oktober", time: "12:00 - 22:00" },
+        { day: "Sonntag November - April", time: "11:00 - 16:00" },
+      ],
     },
+
     en: {
-      navigation: 'Navigation',
-      contact: 'Contact',
-      openingHours: 'Opening Hours',
-      home: 'Home',
-      history: 'History',
-      menu: 'Menu',
-      contactPage: 'Contact',
-      reservation: 'Reservation',
-      upTo300Guests: 'Up to 300 guests',
-      parkingSpaces: 'parking spaces',
-      regionalSpecialties: 'Regional specialties',
-      businessPrivateEvents: 'Business & private events',
-      copyright: 'All rights reserved.',
-      newsletter: 'Newsletter',
-      newsletterText: 'Stay informed about events and offers',
-      subscribe: 'Subscribe',
-      since: 'Since 1620',
-      description: 'Traditional German cuisine since 1620. Perfect for business meetings and private celebrations with up to 300 guests.'
-    }
-  }
-  
-  const currentMessages = messages[locale as keyof typeof messages]
+      navigation: "Navigation",
+      contact: "Contact",
+      openingHours: "Opening Hours",
+      home: "Home",
+      history: "History",
+      menu: "Menu",
+      contactPage: "Contact",
+      reservation: "Reservation",
+      upTo300Guests: "Up to 300 guests",
+      parkingSpaces: "parking spaces",
+      regionalSpecialties: "Regional specialties",
+      businessPrivateEvents: "Business & private events",
+      copyright: "All rights reserved.",
+      newsletter: "Newsletter",
+      newsletterText: "Stay informed about events and offers",
+      subscribe: "Subscribe",
+      since: "Since 1620",
+      description:
+        "Traditional German cuisine since 1620. Perfect for business meetings and private celebrations with up to 300 guests.",
+      openingHoursData: [
+        { day: "Monday", time: "Closed", closed: true },
+        { day: "Tuesday - Saturday", time: "4:00 PM - 10:00 PM" },
+        { day: "Sunday May - October", time: "12:00 PM - 10:00 PM" },
+        { day: "Sunday November - April", time: "11:00 AM - 4:00 PM" },
+      ],
+    },
+  };
+
+  const currentMessages = messages[locale as keyof typeof messages];
   const navigationLinks = [
-    { href: locale === 'en' ? '/en' : '/', label: currentMessages.home },
-    { href: locale === 'en' ? '/history' : '/geschichte', label: currentMessages.history },
-    { href: locale === 'en' ? '/menu' : '/speisekarte', label: currentMessages.menu },
-    { href: locale === 'en' ? '/contact' : '/kontakt', label: currentMessages.contactPage },
-    { href: locale === 'en' ? '/reservation' : '/reservierung', label: currentMessages.reservation },
-  ]
+    { href: locale === "en" ? "/en" : "/", label: currentMessages.home },
+    {
+      href: locale === "en" ? "/history" : "/geschichte",
+      label: currentMessages.history,
+    },
+    {
+      href: locale === "en" ? "/menu" : "/speisekarte",
+      label: currentMessages.menu,
+    },
+    {
+      href: locale === "en" ? "/contact" : "/kontakt",
+      label: currentMessages.contactPage,
+    },
+    {
+      href: locale === "en" ? "/reservation" : "/reservierung",
+      label: currentMessages.reservation,
+    },
+  ];
 
   return (
     <footer className="bg-primary-800 text-white relative overflow-hidden">
@@ -164,7 +191,7 @@ export default function Footer() {
               {currentMessages.openingHours}
             </h4>
             <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-secondary-400" />
                 <div className="text-sm opacity-80">
                   <p className="font-medium">Di-So</p>
@@ -177,8 +204,18 @@ export default function Footer() {
                   <p className="font-medium">Mo</p>
                   <p className="text-red-400">Geschlossen</p>
                 </div>
-                
-              </div>
+              </div> */}
+              {currentMessages.openingHoursData.map((item) => (
+                <div key={item.day} className="flex items-center space-x-3">
+                  <Clock className="w-4 h-3 text-secondary-400" />
+                  <div className="text-sm opacity-80">
+                    <p className="font-medium">{item.day}</p>
+                    <p className={item.closed ? "text-red-400" : ""}>
+                      {item.time}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Quick Features */}
@@ -245,5 +282,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

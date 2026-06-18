@@ -1,10 +1,19 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import StructuredData from "@/components/StructuredData"
-import Navigation from "@/components/Navigation"
-import Footer from "@/components/Footer"
-import { Users, Car, ChefHat, Calendar ,Sparkles, Utensils, Trophy, } from "lucide-react"
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import StructuredData from "@/components/StructuredData";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import {
+  Users,
+  Car,
+  ChefHat,
+  Calendar,
+  Sparkles,
+  Utensils,
+  Trophy,
+  Megaphone
+} from "lucide-react";
 
 import { IoRestaurantSharp } from "react-icons/io5";
 import { BsMagic } from "react-icons/bs";
@@ -22,7 +31,7 @@ export const metadata: Metadata = {
       de: "https://efsane-events.de",
     },
   },
-}
+};
 
 export default function EnglishHomePage() {
   return (
@@ -72,16 +81,14 @@ export default function EnglishHomePage() {
           </div>
         </div> */}
 
-       {/* Overlay Cards + Overlapping Button */}
-      <div className="absolute bottom-20 left-0 right-0 z-30 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto relative text-center">
+        {/* Overlay Cards + Overlapping Button */}
+        <div className="absolute bottom-20 left-0 right-0 z-30 px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto relative text-center">
+            {/* Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* New Year's Eve Buffet with background image */}
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2  gap-4">
-
-            {/* New Year's Eve Buffet with background image */}
-
-            {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
+              {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
               <div className="absolute inset-0">
                 <Image
                   src="/images/card1.png"
@@ -108,92 +115,124 @@ export default function EnglishHomePage() {
               </div>
             </div> */}
 
-            {/* Sunday Brunch with card2.png background */}
-            <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/card2.png"
-                  alt="Sunday Brunch"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black/30"></div>
+              {/* Sunday Brunch with card2.png background */}
+              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/card2.png"
+                    alt="Sunday Brunch"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-black/30"></div>
+                </div>
+
+                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
+                   <Megaphone className="w-8 h-8 text-[#fef3c7]" />
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
+                      NOW AVAILABLE
+                    </h3>
+                  </div>
+                  <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-5">
+                    A new menu featuring traditional Hessian dishes.
+                    <br />
+                    Our kitchen is under new management!
+                    <br />
+                    {/* <span className="font-semibold">€17.50 per person</span> */}
+                  </p>
+                </div>
               </div>
 
-              <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
-                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
-                  <IoRestaurantSharp className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
-                  <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
-                    NOW AVAILABLE
-                  </h3>
+              {/* Football Live with card2.png background */}
+              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/card2.png"
+                    alt="Football Live"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-black/30"></div>
                 </div>
-                <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-5">
-                  A new menu featuring traditional Hessian dishes.<br />
-                  Our kitchen is under new management!<br />
-                  {/* <span className="font-semibold">€17.50 per person</span> */}
-                </p>
+
+                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
+                    <LuTvMinimalPlay className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
+                      FOOTBALL LIVE
+                    </h3>
+                  </div>
+                  <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-2">
+                    Bundesliga & Champions League
+                    <br />
+                    Live on big screen
+                  </p>
+                  <div className="flex align-center mb-5">
+                    <GiSoccerBall className="w-6 h-6 sm:w-9 sm:h-9 text-[#fef3c7] text-center  " />
+                    <TbDeviceRemote className="w-6 h-6 sm:w-9 sm:h-9 text-[#fef3c7] text-center remote_tv" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Sunday Buffets with card2.png background */}
+              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/card2.png"
+                    alt="Sunday Buffets"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-black/30"></div>
+                </div>
+
+                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
+                    <IoRestaurantSharp className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
+                      SUNDAY BUFFETS
+                    </h3>
+                  </div>
+
+                  <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-5">
+                    On Sundays, we often offer a buffet.
+                    <br />
+                    Please check our promotional announcements for current
+                    offerings.
+                    <br />
+                    Brunch Buffet, Gala Buffet, Sunday Buffet,
+                    <br />
+                    Hesse Buffet and more.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Football Live with card2.png background */}
-            <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
-              <div className="absolute inset-0">
-                <Image
-                  src="/images/card2.png"
-                  alt="Football Live"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-black/30"></div>
-              </div>
-
-              <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
-                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
-                  <LuTvMinimalPlay className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
-                  <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
-                    FOOTBALL LIVE
-                  </h3>
-                </div>
-                <p className="text-base sm:text-lg leading-relaxed opacity-95 mb-2">
-                  Bundesliga & Champions League<br />
-                  Live on big screen
-                </p>
-                <div className="flex align-center mb-5">
-                   <GiSoccerBall className="w-6 h-6 sm:w-9 sm:h-9 text-[#fef3c7] text-center  " />
-                   <TbDeviceRemote className="w-6 h-6 sm:w-9 sm:h-9 text-[#fef3c7] text-center remote_tv" />
-                </div>
-              </div>
+            {/* Overlapping Button */}
+            <div className="mt-6 flex justify-center booking_button">
+              <Link
+                href="/reservation"
+                className="w-full sm:w-2/3 md:w-1/2 px-4 py-3 sm:px-10 sm:py-4 text-[#fef3c7] text-lg sm:text-xl font-semibold rounded-md shadow-xl border border-amber-400/60 transition-all relative overflow-hidden"
+                style={{
+                  backgroundImage: "url('/images/button.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                Reserve a Table
+              </Link>
             </div>
 
+            {/* Note */}
+            <p className="mt-4 text-sm sm:text-base text-white/80">
+              Reservation recommended · limited seats
+            </p>
           </div>
-
-          {/* Overlapping Button */}
-          <div className="mt-6 flex justify-center booking_button">
-            <Link
-              href="/reservation"
-              className="w-full sm:w-2/3 md:w-1/2 px-4 py-3 sm:px-10 sm:py-4 text-[#fef3c7] text-lg sm:text-xl font-semibold rounded-md shadow-xl border border-amber-400/60 transition-all relative overflow-hidden"
-              style={{
-                backgroundImage: "url('/images/button.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              Reserve a Table
-            </Link>
-          </div>
-
-          {/* Note */}
-          <p className="mt-4 text-sm sm:text-base text-white/80">
-            Reservation recommended · limited seats
-          </p>
-
         </div>
-      </div>
-
-
-
       </section>
 
       {/* Features Section */}
@@ -258,22 +297,25 @@ export default function EnglishHomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-serif text-4xl font-bold text-gray-900 mb-6">
-                Our Gasthaus – History & Tradition
+                Welcome to Gasthaus Rudolph
               </h2>
-              <p className="text-lg text-gray-700 mb-6">
-                Since 1620, the half-timbered house has stood in the historic
-                center of Niederhofheim – today Liederbach am Taunus, in the
-                heart of the Rhine-Main area. Originally the seat of the Hofmann
-                magistrate family, Gasthaus Rudolph has established itself over
-                the centuries as a cornerstone of regional hospitality — and is
-                considered one of the oldest houses in the village.
+
+              <blockquote className="text-xl text-amber-700 font-serif italic mb-6 border-l-4 border-amber-500 pl-4">
+                Taste Tradition – Just Like Grandma Used to Make.
+              </blockquote>
+
+              <p className="text-lg text-gray-700 mb-8">
+                Since 1620, Gasthaus Rudolph has welcomed guests with authentic
+                German hospitality and traditional Hessian cuisine, preserving a
+                culinary heritage passed down through generations.
               </p>
               <blockquote className="text-xl text-amber-700 font-serif italic mb-6 border-l-4 border-amber-500 pl-4">
                 "Over 400 years of tradition – since 1620."
               </blockquote>
               <p className="text-lg text-gray-700 mb-8">
-                Our *Ebbler* is a fine local cider. You can expect freshly prepared dishes from the daily
-                menu, served with family hospitality.
+                Our *Ebbler* is a fine local cider. You can expect freshly
+                prepared dishes from the daily menu, served with family
+                hospitality.
               </p>
               <Link
                 href="/history"
@@ -369,8 +411,44 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* our concept section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-serif text-4xl font-bold text-gray-900 mb-6">
+            Our Concept
+          </h2>
+
+          <blockquote className="text-xl text-amber-700 font-serif italic mb-8">
+            Authentic Hessian Home-Style Cooking
+          </blockquote>
+
+          <div className="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
+            <p>
+              Our concept is simple: we serve authentic Hessian home-style
+              cooking just like in the good old days. We draw on traditional
+              recipes, preserving a culinary heritage that must not be allowed
+              to fade into oblivion.
+            </p>
+
+            <p>
+              Freshness and regional sourcing are always our top priorities. Our
+              ingredients come primarily from regional livestock farmers,
+              growers, and producers throughout Hesse, ensuring freshness,
+              quality, and sustainability.
+            </p>
+
+            <p>
+              Only in exceptional situations, such as supply shortages caused by
+              crop failures or strikes, do we use carefully selected,
+              high-quality convenience products that meet the strict standards
+              of our head chef.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }

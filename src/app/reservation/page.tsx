@@ -165,7 +165,7 @@ export default function ReservationPage() {
             <span className="text-amber-400">Reservation</span>
           </h1>
           <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-            Reserve your table or event space
+           On special event days, it's a good idea to make your reservation well in advance. 
           </p>
         </div>
       </section>
@@ -439,21 +439,33 @@ export default function ReservationPage() {
 
               {/* Opening Hours */}
               <div className="mt-6 p-4 bg-primary-800 text-white rounded-xl">
-                <h3 className="font-serif text-lg font-semibold mb-3 flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
-                  Opening hours
-                </h3>
-                <div className="text-sm space-y-1">
-                  <div className="flex justify-between">
-                    <span>Wednesday - Sunday:</span>
-                    <span>16:00 - 22:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Monday - Tuesday:</span>
-                    <span className="text-red-400">Closed</span>
-                  </div>
-                </div>
-              </div>
+  <h3 className="font-serif text-lg font-semibold mb-3 flex items-center">
+    <Clock className="w-5 h-5 mr-2" />
+    Opening hours
+  </h3>
+
+  <div className="text-sm space-y-2">
+    <div className="flex justify-between">
+      <span>Tuesday - Saturday:</span>
+      <span>4:00 PM - 10:00 PM</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Sunday (May - Oct):</span>
+      <span>12:00 PM - 10:00 PM</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Sunday (Nov - Apr):</span>
+      <span>11:00 AM - 4:00 PM</span>
+    </div>
+
+    <div className="flex justify-between">
+      <span>Monday:</span>
+      <span className="text-red-400">Closed</span>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </div>
