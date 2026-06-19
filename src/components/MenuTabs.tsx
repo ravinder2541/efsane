@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Star, Leaf, Cherry } from 'lucide-react'
+import { Star, Leaf, Cherry, Info } from 'lucide-react'
 
 interface MenuItem {
   id: string;
@@ -374,11 +374,14 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
                 </div>
 
                 {showMiscellaneousNote && (
-                  <p className="mt-6 border-t border-gray-200 pt-4 text-sm italic text-gray-500">
-                    {language === 'en'
-                      ? 'These offers are available whilst stocks last. We reserve the right to make changes.'
-                      : 'Diese Angebote gelten nur solange der Vorrat reicht. Änderungen vorbehalten.'}
-                  </p>
+                  <div className="mt-6 flex items-start gap-2 border-t border-gray-200 pt-4 text-sm italic text-gray-500">
+                    <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-600" />
+                    <p>
+                      {language === 'en'
+                        ? 'These offers are available whilst stocks last. We reserve the right to make changes.'
+                        : 'Diese Angebote gelten nur solange der Vorrat reicht. Änderungen vorbehalten.'}
+                    </p>
+                  </div>
                 )}
 
                 {/* No items message */}
@@ -501,11 +504,14 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
               </div>
 
               {showMiscellaneousNote && (
-                <p className="mt-5 border-t border-gray-200 pt-3 text-sm italic text-gray-500">
-                  {language === 'en'
-                    ? 'These offers are available whilst stocks last. We reserve the right to make changes.'
-                    : 'Diese Angebote gelten nur solange der Vorrat reicht. Änderungen vorbehalten.'}
-                </p>
+                <div className="mt-5 flex items-start gap-2 border-t border-gray-200 pt-3 text-sm italic text-gray-500">
+                  <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-600" />
+                  <p>
+                    {language === 'en'
+                      ? 'These offers are available whilst stocks last. We reserve the right to make changes.'
+                      : 'Diese Angebote gelten nur solange der Vorrat reicht. Änderungen vorbehalten.'}
+                  </p>
+                </div>
               )}
 
               {/* No items message */}
