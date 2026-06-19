@@ -703,3 +703,7 @@ select:focus-visible {
 @media (max-width:350px) {
   .hero_banner{height: 1000px !important;}
 }
+
+.miniTextp {
+  font-size:12px !important;
+}

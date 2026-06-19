@@ -12,7 +12,7 @@ import {
   Sparkles,
   Utensils,
   Trophy,
-  Megaphone
+  Megaphone,
 } from "lucide-react";
 
 import { IoRestaurantSharp } from "react-icons/io5";
@@ -20,6 +20,7 @@ import { BsMagic } from "react-icons/bs";
 import { GiSoccerBall } from "react-icons/gi";
 import { LuTvMinimalPlay } from "react-icons/lu";
 import { TbDeviceRemote } from "react-icons/tb";
+import { FaInfoCircle } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -130,7 +131,7 @@ export default function EnglishHomePage() {
 
                 <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
                   <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
-                   <Megaphone className="w-8 h-8 text-[#fef3c7]" />
+                    <Megaphone className="w-8 h-8 text-[#fef3c7]" />
                     <h3 className="font-serif text-lg sm:text-xl font-semibold tracking-wide">
                       NOW AVAILABLE
                     </h3>
@@ -178,7 +179,7 @@ export default function EnglishHomePage() {
               </div>
 
               {/* Sunday Buffets with card2.png background */}
-              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+              {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
                 <div className="absolute inset-0">
                   <Image
                     src="/images/card2.png"
@@ -209,7 +210,41 @@ export default function EnglishHomePage() {
                     Hesse Buffet and more.
                   </p>
                 </div>
+              </div> */}
+
+              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/card2.png"
+                    alt="Important Notice"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-black/30"></div>
+                </div>
+
+                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
+                    <FaInfoCircle  className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
+                    <h3 className="font-serif text-base sm:text-xl font-semibold tracking-wide uppercase">
+                      IMPORTANT NOTICE
+                    </h3>
+                  </div>
+
+                  <p className="text-sm sm:text-lg leading-relaxed opacity-95 mb-3 miniTextp">
+                    Our restaurant will be closed from
+                    <br />
+                    19–21 June 2026
+                    <br />
+                    20 due to a private function! We’ll be open again from 4 pm
+                    <br />
+                    on Tuesday 23 June 2026.
+                  </p>
+                </div>
               </div>
+
+              {/* specail annocement */}
             </div>
 
             {/* Overlapping Button */}

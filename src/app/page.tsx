@@ -14,7 +14,7 @@ import {
   Sparkles,
   Utensils,
   Trophy,
-  Megaphone
+  Megaphone,
 } from "lucide-react";
 
 import { IoRestaurantSharp } from "react-icons/io5";
@@ -22,6 +22,7 @@ import { BsMagic } from "react-icons/bs";
 import { GiSoccerBall } from "react-icons/gi";
 import { LuTvMinimalPlay } from "react-icons/lu";
 import { TbDeviceRemote } from "react-icons/tb";
+import { FaInfoCircle } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title:
@@ -203,7 +204,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+              {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
                 <div className="absolute inset-0">
                   <Image
                     src="/images/card2.png"
@@ -235,7 +236,43 @@ export default function HomePage() {
                     Hessenbuffet und vieles mehr.
                   </p>
                 </div>
+              </div> */}
+
+              {/* specail annconment section card*/}
+
+              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
+                <div className="absolute inset-0">
+                  <Image
+                    src="/images/card2.png"
+                    alt="Wichtige Mitteilung"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-black/30"></div>
+                </div>
+
+                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
+                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
+                    <FaInfoCircle  className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
+                    <h3 className="font-serif text-xs sm:text-xl font-semibold tracking-wide uppercase">
+                      WICHTIGE MITTEILUNG
+                    </h3>
+                  </div>
+
+                  <p className="text-xs sm:text-base leading-relaxed opacity-95 mb-3 miniTextp">
+                    Unser Gasthaus ist vom
+                    <br />
+                    19. - 21.06.2026
+                    20. wegen geschlossener Gesellschaft geschlossen!
+                    <br />
+                    Ab Dienstag den 23.06.26
+                    <br />
+                    sind wir ab 16 Uhr wieder für Sie da.
+                  </p>
+                </div>
               </div>
+
             </div>
 
             {/* Overlapping Button */}

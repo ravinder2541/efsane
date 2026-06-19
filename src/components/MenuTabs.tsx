@@ -111,6 +111,7 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
   const beverageCategories = categories.filter(cat => !foodCategories.includes(cat));
 
   const activeCategory = categories.find(cat => cat.id === activeTab);
+  const showMiscellaneousNote = activeCategory?.name_en === 'Miscellaneous' || activeCategory?.name_de === 'Verschiedenes';
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -372,6 +373,12 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
                   })}
                 </div>
 
+                {showMiscellaneousNote && (
+                  <p className="mt-6 border-t border-gray-200 pt-4 text-sm italic text-gray-500">
+                    These offers are available whilst stocks last. We reserve the right to make changes.
+                  </p>
+                )}
+
                 {/* No items message */}
                 {activeCategory.items.length === 0 && (
                   <div className="text-center py-12">
@@ -490,6 +497,12 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
                   );
                 })}
               </div>
+
+              {showMiscellaneousNote && (
+                <p className="mt-5 border-t border-gray-200 pt-3 text-sm italic text-gray-500">
+                  These offers are available whilst stocks last. We reserve the right to make changes.
+                </p>
+              )}
 
               {/* No items message */}
               {activeCategory.items.length === 0 && (
