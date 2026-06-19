@@ -375,7 +375,9 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
 
                 {showMiscellaneousNote && (
                   <p className="mt-6 border-t border-gray-200 pt-4 text-sm italic text-gray-500">
-                    These offers are available whilst stocks last. We reserve the right to make changes.
+                    {language === 'en'
+                      ? 'These offers are available whilst stocks last. We reserve the right to make changes.'
+                      : 'Diese Angebote gelten nur solange der Vorrat reicht. Änderungen vorbehalten.'}
                   </p>
                 )}
 
@@ -500,7 +502,9 @@ export default function MenuTabs({ categories, language = 'de' }: MenuTabsProps)
 
               {showMiscellaneousNote && (
                 <p className="mt-5 border-t border-gray-200 pt-3 text-sm italic text-gray-500">
-                  These offers are available whilst stocks last. We reserve the right to make changes.
+                  {language === 'en'
+                    ? 'These offers are available whilst stocks last. We reserve the right to make changes.'
+                    : 'Diese Angebote gelten nur solange der Vorrat reicht. Änderungen vorbehalten.'}
                 </p>
               )}
 
