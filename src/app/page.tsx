@@ -106,11 +106,11 @@ export default function HomePage() {
 
         {/* Overlay Cards + Overlapping Button */}
         <div className="absolute bottom-20 left-0 right-0 z-30 px-4 sm:px-6">
-          <div className="max-w-7xl mx-auto relative text-center">
+          <div className="max-w-5xl mx-auto relative text-center">
             {/* Cards */}
             {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
              */}
-            <div className="grid grid-cols-1 sm:grid-cols-3  gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2  gap-8">
               {/* Silvester with background image */}
               {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#3a2a16]"> */}
 
@@ -237,42 +237,6 @@ export default function HomePage() {
                   </p>
                 </div>
               </div> */}
-
-              {/* specail annconment section card*/}
-
-              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/images/card2.png"
-                    alt="Wichtige Mitteilung"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-black/30"></div>
-                </div>
-
-                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
-                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
-                    <FaInfoCircle  className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
-                    <h3 className="font-serif text-xs sm:text-xl font-semibold tracking-wide uppercase">
-                      WICHTIGE MITTEILUNG
-                    </h3>
-                  </div>
-
-                  <p className="text-xs sm:text-base leading-relaxed opacity-95 mb-3 miniTextp">
-                    Unser Gasthaus ist vom
-                    <br />
-                    19. - 21.06.2026
-                    20. wegen geschlossener Gesellschaft geschlossen!
-                    <br />
-                    Ab Dienstag den 23.06.26
-                    <br />
-                    sind wir ab 16 Uhr wieder für Sie da.
-                  </p>
-                </div>
-              </div>
-
             </div>
 
             {/* Overlapping Button */}

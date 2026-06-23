@@ -84,9 +84,9 @@ export default function EnglishHomePage() {
 
         {/* Overlay Cards + Overlapping Button */}
         <div className="absolute bottom-20 left-0 right-0 z-30 px-4 sm:px-6">
-          <div className="max-w-7xl mx-auto relative text-center">
+          <div className="max-w-5xl mx-auto relative text-center">
             {/* Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
               {/* New Year's Eve Buffet with background image */}
 
               {/* <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/60 text-[#623701]">
@@ -212,39 +212,6 @@ export default function EnglishHomePage() {
                 </div>
               </div> */}
 
-              <div className="relative rounded-md overflow-hidden shadow-lg border border-amber-300/40 text-[#fef3c7]">
-                <div className="absolute inset-0">
-                  <Image
-                    src="/images/card2.png"
-                    alt="Important Notice"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-black/30"></div>
-                </div>
-
-                <div className="relative px-4 sm:px-6 py-6 flex flex-col items-center justify-center text-center">
-                  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3">
-                    <FaInfoCircle  className="w-5 h-5 sm:w-6 sm:h-6 text-[#fef3c7]" />
-                    <h3 className="font-serif text-base sm:text-xl font-semibold tracking-wide uppercase">
-                      IMPORTANT NOTICE
-                    </h3>
-                  </div>
-
-                  <p className="text-sm sm:text-lg leading-relaxed opacity-95 mb-3 miniTextp">
-                    Our restaurant will be closed from
-                    <br />
-                    19–21 June 2026
-                    <br />
-                    20 due to a private function! We’ll be open again from 4 pm
-                    <br />
-                    on Tuesday 23 June 2026.
-                  </p>
-                </div>
-              </div>
-
-              {/* specail annocement */}
             </div>
 
             {/* Overlapping Button */}
