@@ -22,7 +22,7 @@ import {
   Phone,
   Mail,
   MapPin,
-  Clock
+  Clock,
 } from 'lucide-react'
 
 const reservationSchema = z.object({
@@ -146,156 +146,160 @@ export default function ReservationPage() {
       <StructuredData type="event" />
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/hero_reservation.jpg"
-          alt="Reservation - Efsane Gasthaus Rudolph"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-10"></div>
-        <div className="relative z-20 text-center text-white px-4">
-          <Link href="/en" className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to home
-          </Link>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4">
-            <span className="text-amber-400">Reservation</span>
-          </h1>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-           On special event days, it's a good idea to make your reservation well in advance. 
-          </p>
-        </div>
-      </section>
-
       {/* Reservation Content */}
-      <section className="section-padding">
-        <div className="container-max">
-          <div className="grid lg:grid-cols-3 gap-12">
+      <section className="relative overflow-hidden bg-[#f6eedf] text-[#3b2416] font-garamond [font-variant-numeric:lining-nums]">
+        <Image src="/contactbg-light.png" alt="" fill priority sizes="100vw" className="object-cover object-bottom" />
+
+        <div className="relative z-10 w-full px-5 sm:px-8 lg:px-[6.5vw] pt-28 lg:pt-32 pb-28 lg:pb-36">
+          {/* Header */}
+          <div className="relative text-center">
+            <Link
+              href="/en"
+              className="lg:absolute lg:left-0 lg:top-2 inline-flex items-center gap-3 mb-6 lg:mb-0 px-6 py-2 rounded-full border border-[#b08a45] bg-[#fffaf1]/70 text-[#7b1a1f] text-lg hover:bg-[#f3e6cf] transition-colors no-underline"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to home
+            </Link>
+            <h1 className="font-serif font-bold text-5xl md:text-7xl bg-gradient-to-b from-[#8e1f25] to-[#5a1014] bg-clip-text text-transparent leading-tight">
+              Reservation
+            </h1>
+            <svg viewBox="0 0 320 14" className="mx-auto mt-2 w-72 md:w-80 h-auto text-[#b08a45]" aria-hidden="true">
+              <line x1="0" y1="7" x2="130" y2="7" stroke="currentColor" strokeWidth="1" />
+              <line x1="190" y1="7" x2="320" y2="7" stroke="currentColor" strokeWidth="1" />
+              <path d="M160 2 L165 7 L160 12 L155 7 Z" fill="currentColor" />
+              <path d="M130 7 C136 1, 146 1, 150 6 C152 9, 148 11, 145 9 M190 7 C184 1, 174 1, 170 6 C168 9, 172 11, 175 9" fill="none" stroke="currentColor" strokeWidth="1.2" />
+            </svg>
+            <p className="mt-3 mx-auto max-w-3xl text-xl md:text-[1.7rem] leading-snug text-[#3b2416]">
+              On special event days, it's a good idea to make your reservation well in advance.
+            </p>
+          </div>
+
+          <div className="mt-10 lg:mt-12 grid gap-8 lg:grid-cols-3 lg:gap-7 items-start">
             {/* Reservation Form */}
-            <div className="lg:col-span-2">
-              <h2 className="font-serif text-3xl font-bold text-primary-700 mb-6">
-                Reservation request
-              </h2>
+            <div className="lg:col-span-2 rounded-xl border border-[#c9a25e]/60 bg-[#fffaf1]/85 backdrop-blur-sm shadow-[0_18px_40px_rgba(120,80,30,0.18)] p-6 md:p-8">
+              <div className="flex items-center gap-5">
+                <span className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-b from-[#8e1f25] to-[#6c1519] text-[#fbe9c4] flex items-center justify-center shadow-[0_3px_8px_rgba(80,20,20,0.3)]">
+                  <Calendar className="w-6 h-6" strokeWidth={1.8} />
+                </span>
+                <h2 className="font-serif text-3xl md:text-[2.1rem] font-bold text-[#2b1a10]">Reservation request</h2>
+              </div>
               
 
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
                 {/* Personal Information */}
-                <div className="bg-neutral-50 p-6 rounded-xl">
-                  <h3 className="font-serif text-xl font-semibold text-primary-700 mb-4">
+                <div className="rounded-xl border border-[#c9a25e]/40 bg-white/50 p-5 md:p-6">
+                  <h3 className="font-serif text-2xl font-semibold text-[#7b1a1f] mb-4 pb-2 border-b border-[#c9a25e]/40">
                     Personal information
                   </h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="form-label">
+                      <label htmlFor="name" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                         Name *
                       </label>
                       <input
                         type="text"
                         id="name"
                         {...register('name')}
-                        className={`form-input ${errors.name ? 'error' : ''}`}
+                        className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors ${errors.name ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                         placeholder="Your full name"
                       />
                       {errors.name && (
-                        <p className="form-error">{errors.name.message}</p>
+                        <p className="mt-1 text-[#b3261e] text-base">{errors.name.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="form-label">
+                      <label htmlFor="email" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                         Email *
                       </label>
                       <input
                         type="email"
                         id="email"
                         {...register('email')}
-                        className={`form-input ${errors.email ? 'error' : ''}`}
+                        className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors ${errors.email ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                         placeholder="your.email@example.com"
                       />
                       {errors.email && (
-                        <p className="form-error">{errors.email.message}</p>
+                        <p className="mt-1 text-[#b3261e] text-base">{errors.email.message}</p>
                       )}
                     </div>
 
                     <div className="md:col-span-2">
-                      <label htmlFor="phone" className="form-label">
+                      <label htmlFor="phone" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                         Phone *
                       </label>
                       <input
                         type="tel"
                         id="phone"
                         {...register('phone')}
-                        className={`form-input ${errors.phone ? 'error' : ''}`}
+                        className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors ${errors.phone ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                         placeholder="06196 23640"
                       />
                       {errors.phone && (
-                        <p className="form-error">{errors.phone.message}</p>
+                        <p className="mt-1 text-[#b3261e] text-base">{errors.phone.message}</p>
                       )}
                     </div>
                   </div>
                 </div>
 
                 {/* Reservation Details */}
-                <div className="bg-neutral-50 p-6 rounded-xl">
-                  <h3 className="font-serif text-xl font-semibold text-primary-700 mb-4">
+                <div className="rounded-xl border border-[#c9a25e]/40 bg-white/50 p-5 md:p-6">
+                  <h3 className="font-serif text-2xl font-semibold text-[#7b1a1f] mb-4 pb-2 border-b border-[#c9a25e]/40">
                     Reservation details
                   </h3>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div>
-                      <label htmlFor="date" className="form-label">
+                      <label htmlFor="date" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                         Date *
                       </label>
                       <input
                         type="date"
                         id="date"
                         {...register('date')}
-                        className={`form-input ${errors.date ? 'error' : ''}`}
+                        className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors ${errors.date ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                         min={new Date().toISOString().split('T')[0]}
                       />
                       {errors.date && (
-                        <p className="form-error">{errors.date.message}</p>
+                        <p className="mt-1 text-[#b3261e] text-base">{errors.date.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <label htmlFor="time" className="form-label">
+                      <label htmlFor="time" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                         Time *
                       </label>
                       <input
                         type="time"
                         id="time"
                         {...register('time')}
-                        className={`form-input ${errors.time ? 'error' : ''}`}
+                        className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors ${errors.time ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                         step="900"
                         placeholder="13:00"
                       />
                       {errors.time && (
-                        <p className="form-error">{errors.time.message}</p>
+                        <p className="mt-1 text-[#b3261e] text-base">{errors.time.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <label htmlFor="guests" className="form-label">
+                      <label htmlFor="guests" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                         Number of guests *
                       </label>
                       <input
                         type="number"
                         id="guests"
                         {...register('guests')}
-                        className={`form-input ${errors.guests ? 'error' : ''}`}
+                        className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors ${errors.guests ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                         min="1"
                         max="300"
                         placeholder="1"
                       />
                       {errors.guests && (
-                        <p className="form-error">{errors.guests.message}</p>
+                        <p className="mt-1 text-[#b3261e] text-base">{errors.guests.message}</p>
                       )}
                       {watchedGuests > 50 && (
-                        <p className="text-sm text-blue-600 mt-1">
+                        <p className="mt-1 text-base text-[#7b1a1f]">
                           For larger events, please contact us by phone.
                         </p>
                       )}
@@ -303,13 +307,13 @@ export default function ReservationPage() {
                   </div>
 
                   <div className="mt-4">
-                    <label htmlFor="eventType" className="form-label">
+                    <label htmlFor="eventType" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                       Type of event *
                     </label>
                     <select
                       id="eventType"
                       {...register('eventType')}
-                      className={`form-select ${errors.eventType ? 'error' : ''}`}
+                      className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors appearance-none pr-10 ${errors.eventType ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                     >
                       <option value="">Please select...</option>
                       <option value="business">Business meeting</option>
@@ -317,14 +321,14 @@ export default function ReservationPage() {
                       <option value="celebration">Special celebration</option>
                     </select>
                     {errors.eventType && (
-                      <p className="form-error">{errors.eventType.message}</p>
+                      <p className="mt-1 text-[#b3261e] text-base">{errors.eventType.message}</p>
                     )}
                   </div>
                 </div>
 
                 {/* Special Requests */}
                 <div>
-                  <label htmlFor="specialRequests" className="form-label">
+                  <label htmlFor="specialRequests" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                     Special requests
                   </label>
                   <textarea
@@ -335,7 +339,7 @@ export default function ReservationPage() {
                     rows={4}
                   />
                   {errors.specialRequests && (
-                    <p className="form-error">{errors.specialRequests.message}</p>
+                    <p className="mt-1 text-[#b3261e] text-base">{errors.specialRequests.message}</p>
                   )}
                 </div>
 
@@ -354,16 +358,16 @@ export default function ReservationPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
-                  className="btn-primary w-full flex items-center justify-center text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-b from-[#8e1f25] to-[#6c1519] text-[#fbf3e4] text-2xl font-bold shadow-[0_8px_20px_rgba(80,20,20,0.3)] hover:brightness-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-[#fbf3e4] border-t-transparent"></div>
                       Sending...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5 mr-2" />
+                      <Send className="w-6 h-6" fill="currentColor" />
                       Request reservation
                     </>
                   )}
@@ -372,79 +376,84 @@ export default function ReservationPage() {
             </div>
 
             {/* Restaurant Information */}
-            <div>
-              <h2 className="font-serif text-3xl font-bold text-primary-700 mb-6">
-                Restaurant info
-              </h2>
+            <div className="space-y-7">
+              <div className="rounded-xl border border-[#c9a25e]/60 bg-[#fffaf1]/85 backdrop-blur-sm shadow-[0_18px_40px_rgba(120,80,30,0.18)] p-6">
+              <div className="flex items-center gap-4 mb-3">
+                <span className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-b from-[#8e1f25] to-[#6c1519] text-[#fbe9c4] flex items-center justify-center shadow-[0_3px_8px_rgba(80,20,20,0.3)]">
+                  <Users className="w-6 h-6" strokeWidth={1.8} />
+                </span>
+                <h2 className="font-serif text-3xl font-bold text-[#2b1a10]">Restaurant info</h2>
+              </div>
               
               {/* Features */}
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-3 p-4 bg-primary-50 rounded-lg">
-                  <Users className="w-6 h-6 text-primary-600" />
+              <div className="divide-y divide-[#c9a25e]/40">
+                <div className="flex items-center gap-4 py-3.5">
+                  <span className="shrink-0 w-11 h-11 rounded-full border border-[#c9a25e] bg-[#fbf3e3] text-[#7b1a1f] flex items-center justify-center"><Users className="w-5 h-5" strokeWidth={1.8} /></span>
                   <div>
-                    <h3 className="font-semibold text-primary-700">Up to 300 guests</h3>
-                    <p className="text-sm text-gray-600">Perfect for large events</p>
+                    <h3 className="text-xl font-bold text-[#2b1a10] leading-tight">Up to 300 guests</h3>
+                    <p className="text-base text-[#5a4636]">Perfect for large events</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3 p-4 bg-secondary-50 rounded-lg">
-                  <Car className="w-6 h-6 text-secondary-600" />
+                <div className="flex items-center gap-4 py-3.5">
+                  <span className="shrink-0 w-11 h-11 rounded-full border border-[#c9a25e] bg-[#fbf3e3] text-[#7b1a1f] flex items-center justify-center"><Car className="w-5 h-5" strokeWidth={1.8} /></span>
                   <div>
-                    <h3 className="font-semibold text-primary-700">70+ parking spaces</h3>
-                    <p className="text-sm text-gray-600">Free parking available</p>
+                    <h3 className="text-xl font-bold text-[#2b1a10] leading-tight">70+ parking spaces</h3>
+                    <p className="text-base text-[#5a4636]">Free parking available</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg">
-                  <Calendar className="w-6 h-6 text-green-600" />
+                <div className="flex items-center gap-4 py-3.5">
+                  <span className="shrink-0 w-11 h-11 rounded-full border border-[#c9a25e] bg-[#fbf3e3] text-[#7b1a1f] flex items-center justify-center"><Calendar className="w-5 h-5" strokeWidth={1.8} /></span>
                   <div>
-                    <h3 className="font-semibold text-primary-700">Flexible times</h3>
-                    <p className="text-sm text-gray-600">Also outside opening hours</p>
+                    <h3 className="text-xl font-bold text-[#2b1a10] leading-tight">Flexible times</h3>
+                    <p className="text-base text-[#5a4636]">Also outside opening hours</p>
                   </div>
                 </div>
               </div>
+              </div>
 
               {/* Contact Information */}
-              <div className="bg-neutral-50 p-6 rounded-xl">
-                <h3 className="font-serif text-xl font-semibold text-primary-700 mb-4">
+              <div className="rounded-xl border border-[#c9a25e]/60 bg-[#fffaf1]/85 backdrop-blur-sm shadow-[0_18px_40px_rgba(120,80,30,0.18)] p-6">
+                <h3 className="font-serif text-2xl font-bold text-[#2b1a10] mb-4 pb-2 border-b border-[#c9a25e]/40">
                   Direct contact
                 </h3>
                 
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary-600" />
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <span className="shrink-0 w-11 h-11 rounded-full border border-[#c9a25e] bg-[#fbf3e3] text-[#7b1a1f] flex items-center justify-center"><Phone className="w-5 h-5" strokeWidth={1.8} /></span>
                     <div>
-                      <p className="font-medium">06196 23640</p>
-                      <p className="text-sm text-gray-600">Wed-Sun: 16:00-22:00</p>
+                      <p className="text-xl font-semibold text-[#2b1a10] leading-tight">06196 23640</p>
+                      <p className="text-base text-[#5a4636]">Wed-Sun: 16:00-22:00</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-primary-600" />
+                  <div className="flex items-center gap-4">
+                    <span className="shrink-0 w-11 h-11 rounded-full border border-[#c9a25e] bg-[#fbf3e3] text-[#7b1a1f] flex items-center justify-center"><Mail className="w-5 h-5" strokeWidth={1.8} /></span>
                     <div>
-                      <p className="font-medium">info@efsane-events.de</p>
-                      <p className="text-sm text-gray-600">We respond within 24h</p>
+                      <p className="text-xl font-semibold text-[#2b1a10] leading-tight">info@efsane-events.de</p>
+                      <p className="text-base text-[#5a4636]">We respond within 24h</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-primary-600" />
+                  <div className="flex items-center gap-4">
+                    <span className="shrink-0 w-11 h-11 rounded-full border border-[#c9a25e] bg-[#fbf3e3] text-[#7b1a1f] flex items-center justify-center"><MapPin className="w-5 h-5" strokeWidth={1.8} /></span>
                     <div>
-                      <p className="font-medium">Alt Niederhofheim 30</p>
-                      <p className="text-sm text-gray-600">65835 Liederbach am Taunus</p>
+                      <p className="text-xl font-semibold text-[#2b1a10] leading-tight">Alt Niederhofheim 30</p>
+                      <p className="text-base text-[#5a4636]">65835 Liederbach am Taunus</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Opening Hours */}
-              <div className="mt-6 p-4 bg-primary-800 text-white rounded-xl">
-  <h3 className="font-serif text-lg font-semibold mb-3 flex items-center">
-    <Clock className="w-5 h-5 mr-2" />
+              <div className="p-6 rounded-xl bg-gradient-to-b from-[#7b1a1f] to-[#5a1014] text-[#fbf3e4] border border-[#c9a25e]/60 shadow-[0_18px_40px_rgba(80,20,20,0.25)]">
+  <h3 className="font-serif text-2xl font-bold mb-3 pb-2 flex items-center gap-3 border-b border-[#e6c27a]/40 text-[#f6dca0]">
+    <Clock className="w-6 h-6" />
     Opening hours
   </h3>
 
-  <div className="text-sm space-y-2">
+  <div className="text-lg space-y-2">
     <div className="flex justify-between">
       <span>Tuesday - Saturday:</span>
       <span>4:00 PM - 10:00 PM</span>
@@ -462,7 +471,7 @@ export default function ReservationPage() {
 
     <div className="flex justify-between">
       <span>Monday:</span>
-      <span className="text-red-400">Closed</span>
+      <span className="text-[#f6dca0] font-semibold">Closed</span>
     </div>
   </div>
 </div>

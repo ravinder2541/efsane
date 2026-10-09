@@ -87,11 +87,11 @@
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-16 px-4 sm:px-6 lg:px-12;
   }
   
   .container-max {
-    @apply max-w-7xl mx-auto;
+    @apply w-full;
   }
   
   .text-gradient {

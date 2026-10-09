@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Playfair_Display, Cinzel, Cormorant_Garamond, Great_Vibes, UnifrakturMaguntia } from 'next/font/google'
 import './globals.css'
 import ConsentWrapper from '@/components/ConsentWrapper'
 import AnalyticsProvider from '@/components/AnalyticsProvider'
@@ -13,6 +13,34 @@ const inter = Inter({
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
   variable: '--font-playfair',
+  display: 'swap',
+})
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-cinzel',
+  display: 'swap',
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
+
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-great-vibes',
+  display: 'swap',
+})
+
+const fraktur = UnifrakturMaguntia({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-fraktur',
   display: 'swap',
 })
 
@@ -100,17 +128,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="de" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="de" className={`${inter.variable} ${playfair.variable} ${cinzel.variable} ${cormorant.variable} ${greatVibes.variable} ${fraktur.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* All icons are generated from public/favicon.png; bump ?v= after replacing it */}
+        <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+        <link rel="manifest" href="/site.webmanifest?v=2" />
         <meta name="theme-color" content="#D97706" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      {/* suppressHydrationWarning: browser extensions (e.g. ColorZilla) add attributes to <body> */}
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         {/* ConsentWrapper with integrated Analytics */}
         <ConsentWrapper>
           <AnalyticsProvider>

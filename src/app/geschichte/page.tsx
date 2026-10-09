@@ -30,7 +30,7 @@ export default function GeschichtePage() {
           fill
           className="object-cover opacity-30"
         />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="text-center text-white">
             <Link
               href="/"
@@ -51,7 +51,7 @@ export default function GeschichtePage() {
 
       {/* History Content */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="max-w-4xl mx-auto">
             {/* Main Story */}
             <div className="prose prose-lg max-w-none">

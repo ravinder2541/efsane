@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, AlertCircle } from 'lucide-react'
+import { AlertCircle } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
@@ -85,71 +84,53 @@ export default async function MenuPage() {
   const categories = await getMenuData();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <StructuredData type="menu" />
       <Navigation />
 
-      <section className="relative h-96 flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/menu_hero.jpg"
-          alt="Traditional German cuisine - Menu"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-10"></div>
-        <div className="relative z-20 text-center text-white px-4">
-          <Link href="/en" className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to home
-          </Link>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4">
-            Our <span className="text-amber-400">Menu</span>
-          </h1>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-            Traditional German cuisine with authentic regional specialties
+      {categories.length === 0 ? (
+        <section className="bg-[#f8f0e2] pt-32 pb-16 px-5 text-center">
+          <AlertCircle className="w-16 h-16 text-[#c9a25e] mx-auto mb-4" />
+          <h2 className="font-serif text-2xl font-bold text-[#3b2416] mb-2">
+            Loading menu...
+          </h2>
+          <p className="text-[#6b5d50]">
+            Please wait a moment.
           </p>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <MenuTabs
+          categories={categories}
+          language="en"
+          intro={{
+            eyebrow: 'Our',
+            title: 'Menu',
+            subtitle: 'Traditional German cuisine with authentic regional specialties',
+            back: { href: '/en', label: 'Back to home' },
+          }}
+        />
+      )}
 
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          {categories.length === 0 ? (
-            <div className="text-center py-12">
-              <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h2 className="font-serif text-2xl font-bold text-gray-600 mb-2">
-                Loading menu...
-              </h2>
-              <p className="text-gray-500">
-                Please wait a moment.
-              </p>
-            </div>
-          ) : (
-            <MenuTabs categories={categories} language="en" />
-          )}
-
-          <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl shadow-lg p-8 mt-12 text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Experience Our Cuisine?
-            </h2>
-            <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-              Reserve your table today and enjoy traditional German specialties in our cozy atmosphere.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/reservation" 
-                className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Reserve a Table
-              </Link>
-              <Link 
-                href="/contact" 
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-600 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
+      <section className="section-padding bg-gradient-to-b from-[#7b1a1f] to-[#5a1014] text-[#fbf3e4] text-center">
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#f6dca0] mb-4">
+          Ready to Experience Our Cuisine?
+        </h2>
+        <p className="font-garamond text-xl text-[#fbf3e4]/90 mb-8 max-w-2xl mx-auto">
+          Reserve your table today and enjoy traditional German specialties in our cozy atmosphere.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/reservation"
+            className="font-garamond font-bold text-xl px-8 py-3.5 rounded-xl bg-gradient-to-b from-[#f6dca0] to-[#d9b06c] text-[#2b1a10] shadow-lg hover:brightness-105 transition no-underline"
+          >
+            Reserve a Table
+          </Link>
+          <Link
+            href="/contact"
+            className="font-garamond font-bold text-xl px-8 py-3.5 rounded-xl border-2 border-[#e6c27a] text-[#f6dca0] hover:bg-white/10 transition no-underline"
+          >
+            Contact Us
+          </Link>
         </div>
       </section>
 

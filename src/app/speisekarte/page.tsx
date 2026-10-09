@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Euro, Clock, MapPin, AlertCircle } from "lucide-react";
+import { Euro, Clock, MapPin, AlertCircle } from "lucide-react";
 import StructuredData from "@/components/StructuredData";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -134,59 +133,37 @@ export default async function SpeisekartePage() {
       />{" "}
       {/* Navigation */}
       <Navigation />
-      {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/menu_hero.jpg"
-          alt="Traditionelle deutsche Küche - Speisekarte"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 z-10"></div>
-        <div className="relative z-20 text-center text-white px-4">
-          <Link
-            href="/"
-            className="inline-flex items-center text-amber-300 hover:text-amber-200 mb-6 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Zurück zur Startseite
-          </Link>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold mb-4">
-            Unsere <span className="text-amber-400">Speisekarte</span>
-          </h1>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
-            Entdecken Sie unsere vollständige Auswahl an traditionellen
-            deutschen Spezialitäten
+      {/* Menu */}
+      {categoriesWithItems.length === 0 ? (
+        <section className="bg-[#f8f0e2] pt-32 pb-16 px-5 text-center">
+          <AlertCircle className="w-16 h-16 text-[#c9a25e] mx-auto mb-4" />
+          <h2 className="font-serif text-2xl font-bold text-[#3b2416] mb-2">
+            Speisekarte wird geladen...
+          </h2>
+          <p className="text-[#6b5d50]">
+            Bitte haben Sie einen Moment Geduld.
           </p>
-        </div>
-      </section>
-      {/* Menu Tabs Section */}
-      <section className="section-padding">
-        <div className="container-max">
-          {categoriesWithItems.length === 0 ? (
-            <div className="text-center py-12">
-              <AlertCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h2 className="font-serif text-2xl font-bold text-gray-600 mb-2">
-                Speisekarte wird geladen...
-              </h2>
-              <p className="text-gray-500">
-                Bitte haben Sie einen Moment Geduld.
-              </p>
-            </div>
-          ) : (
-            <MenuTabs categories={categoriesWithItems} />
-          )}
-        </div>
-      </section>
+        </section>
+      ) : (
+        <MenuTabs
+          categories={categoriesWithItems}
+          intro={{
+            eyebrow: "Unsere",
+            title: "Speisekarte",
+            subtitle:
+              "Entdecken Sie unsere vollständige Auswahl an traditionellen deutschen Spezialitäten",
+            back: { href: "/", label: "Zurück zur Startseite" },
+          }}
+        />
+      )}
       {/* Call to Action */}
-      <section className="section-padding bg-neutral-50">
+      <section className="section-padding bg-gradient-to-b from-[#7b1a1f] to-[#5a1014] text-[#fbf3e4]">
         <div className="container-max">
           <div className="text-center max-w-3xl mx-auto animate-fade-in">
-            <h2 className="font-serif text-4xl font-bold text-primary-700 mb-6">
+            <h2 className="font-serif text-4xl font-bold text-[#f6dca0] mb-6">
               Reservieren Sie noch heute
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="font-garamond text-xl text-[#fbf3e4]/90 mb-8">
               Erleben Sie unsere traditionelle deutsche Küche in gemütlicher
               Atmosphäre. Perfekt für Geschäftstermine, private Feiern und
               besondere Anlässe.
@@ -194,13 +171,13 @@ export default async function SpeisekartePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/reservierung"
-                className="btn-primary text-lg px-8 py-4 hover-glow"
+                className="font-garamond font-bold text-xl px-8 py-3.5 rounded-xl bg-gradient-to-b from-[#f6dca0] to-[#d9b06c] text-[#2b1a10] shadow-lg hover:brightness-105 transition no-underline"
               >
                 Tisch reservieren
               </Link>
               <Link
                 href="/kontakt"
-                className="btn-outline text-lg px-8 py-4 hover-lift"
+                className="font-garamond font-bold text-xl px-8 py-3.5 rounded-xl border-2 border-[#e6c27a] text-[#f6dca0] hover:bg-white/10 transition no-underline"
               >
                 Kontakt aufnehmen
               </Link>
@@ -209,20 +186,20 @@ export default async function SpeisekartePage() {
         </div>
       </section>
       {/* Restaurant Features */}
-      <section className="section-padding">
+      <section className="section-padding bg-[#f8f0e2]">
         <div className="container-max">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div
               className="p-6 animate-slide-up"
               style={{ animationDelay: "0.1s" }}
             >
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 hover-glow">
-                <Euro className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 rounded-full border-2 border-[#c9a25e] bg-[#fbf3e3] flex items-center justify-center mx-auto mb-4">
+                <Euro className="w-8 h-8 text-[#7b1a1f]" />
               </div>
-              <h3 className="font-serif text-xl font-semibold text-primary-700 mb-2">
+              <h3 className="font-serif text-2xl font-semibold text-[#2b1a10] mb-2">
                 Faire Preise
               </h3>
-              <p className="text-gray-600">
+              <p className="font-garamond text-lg text-[#4a4038]">
                 Authentische deutsche Küche zu fairen Preisen für jeden Anlass.
               </p>
             </div>
@@ -231,13 +208,13 @@ export default async function SpeisekartePage() {
               className="p-6 animate-slide-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 hover-glow">
-                <Clock className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 rounded-full border-2 border-[#c9a25e] bg-[#fbf3e3] flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-[#7b1a1f]" />
               </div>
-              <h3 className="font-serif text-xl font-semibold text-primary-700 mb-2">
+              <h3 className="font-serif text-2xl font-semibold text-[#2b1a10] mb-2">
                 Täglich frisch
               </h3>
-              <p className="text-gray-600">
+              <p className="font-garamond text-lg text-[#4a4038]">
                 Alle Gerichte werden täglich frisch mit regionalen Zutaten
                 zubereitet.
               </p>
@@ -247,13 +224,13 @@ export default async function SpeisekartePage() {
               className="p-6 animate-slide-up"
               style={{ animationDelay: "0.3s" }}
             >
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 hover-glow">
-                <MapPin className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 rounded-full border-2 border-[#c9a25e] bg-[#fbf3e3] flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-[#7b1a1f]" />
               </div>
-              <h3 className="font-serif text-xl font-semibold text-primary-700 mb-2">
+              <h3 className="font-serif text-2xl font-semibold text-[#2b1a10] mb-2">
                 Zentrale Lage
               </h3>
-              <p className="text-gray-600">
+              <p className="font-garamond text-lg text-[#4a4038]">
                 Gut erreichbar mit über 70 Parkplätzen direkt vor dem
                 Restaurant.
               </p>

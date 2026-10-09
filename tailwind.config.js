@@ -57,9 +57,17 @@ module.exports = {
           900: '#9e7d22',
         }
       },
+      screens: {
+        // Wide-enough landscape screens get the side-by-side hero laid over the background image
+        hero: { raw: '(min-width: 1024px) and (min-aspect-ratio: 3/2)' },
+      },
       fontFamily: {
         'serif': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
+        'cinzel': ['var(--font-cinzel)', 'serif'],
+        'garamond': ['var(--font-cormorant)', 'serif'],
+        'script': ['var(--font-great-vibes)', 'cursive'],
+        'fraktur': ['var(--font-fraktur)', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

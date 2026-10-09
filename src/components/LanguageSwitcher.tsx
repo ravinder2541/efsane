@@ -2,151 +2,90 @@
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
-import { ChevronDown, Globe, Languages } from 'lucide-react'
 
 interface LanguageSwitcherProps {
   currentLocale: string
 }
 
+// German page <-> English page
+const pagePairs: [string, string][] = [
+  ['/', '/en'],
+  ['/geschichte', '/history'],
+  ['/speisekarte', '/menu'],
+  ['/kontakt', '/contact'],
+  ['/reservierung', '/reservation'],
+  ['/datenschutz', '/privacy'],
+  ['/impressum', '/legal'],
+]
+
+function counterpart(pathname: string, target: 'de' | 'en'): string {
+  const path = pathname.replace(/\/+$/, '') || '/'
+  const pair = pagePairs.find(([de, en]) => path === de || path === en)
+  if (!pair) return target === 'en' ? '/en' : '/'
+  return target === 'en' ? pair[1] : pair[0]
+}
+
 export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
-  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const languages = [
-    {
-      code: 'de',
-      name: 'Deutsch',
-      nativeName: 'Deutsch',
-      flag: 'DE',
-      path: getGermanPath(pathname)
-    },
-    {
-      code: 'en', 
-      name: 'English',
-      nativeName: 'English',
-      flag: 'EN',
-      path: getEnglishPath(pathname)
-    }
+  const options = [
+    { code: 'de' as const, label: 'DE', name: 'Deutsch' },
+    { code: 'en' as const, label: 'EN', name: 'English' },
   ]
-
-  const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0]
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
-
+  
   return (
-    <div className="relative" ref={dropdownRef}>
-      {/* Professional Language Switcher */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md group"
-        aria-label="Change language"
-        aria-expanded={isOpen}
-      >
-        <Languages className="w-4 h-4 text-gray-500 group-hover:text-primary-600 transition-colors" />
-        <span className="font-medium text-sm">{currentLanguage.flag}</span>
-        <ChevronDown className={`w-4 h-4 text-gray-400 transition-all duration-300 ${isOpen ? 'rotate-180 text-primary-600' : 'group-hover:text-gray-600'}`} />
-      </button>
-
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <>
-          {/* Backdrop for mobile */}
-          <div 
-            className="fixed inset-0 z-40 md:hidden" 
-            onClick={() => setIsOpen(false)}
-          />
-          
-          {/* Dropdown Content */}
-          <div className="absolute top-full right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50 min-w-[180px] animate-scale-in">
-            {/* Header */}
-            <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
-              <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-gray-500" />
-                <span className="text-sm font-medium text-gray-700">Select Language</span>
-              </div>
-            </div>
-            
-            {/* Language Options */}
-            <div className="py-1">
-              {languages.map((lang) => (
-                <Link
-                  key={lang.code}
-                  href={lang.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`
-                    flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors duration-200 group
-                    ${currentLocale === lang.code ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:text-gray-900'}
-                  `}
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className={`
-                      w-8 h-6 rounded-sm flex items-center justify-center text-xs font-bold border
-                      ${currentLocale === lang.code 
-                        ? 'bg-primary-100 text-primary-700 border-primary-200' 
-                        : 'bg-gray-100 text-gray-600 border-gray-200 group-hover:bg-gray-200'
-                      }
-                    `}>
-                      {lang.flag}
-                    </div>
-                    <div>
-                      <div className="font-medium text-sm">{lang.nativeName}</div>
-                      <div className="text-xs text-gray-500">{lang.name}</div>
-                    </div>
-                  </div>
-                  
-                  {currentLocale === lang.code && (
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
+    <div
+      role="group"
+      aria-label="Language"
+      className="relative flex items-center p-1 rounded-full bg-[#fbf5ea]/90 border border-[#d6c098] shadow-[0_2px_6px_rgba(80,50,20,0.12)]"
+    >
+      {/* Sliding highlight behind the active language */}
+      <span
+        aria-hidden="true"
+        className={`absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-full bg-gradient-to-b from-[#8e1f25] to-[#6c1519] shadow-[0_2px_6px_rgba(80,20,20,0.35)] transition-transform duration-300 ease-out ${
+          currentLocale === 'en' ? 'translate-x-full' : 'translate-x-0'
+        }`}
+      />
+      {options.map((opt) => {
+        const active = currentLocale === opt.code
+        return (
+          <Link
+            key={opt.code}
+            href={active ? pathname : counterpart(pathname, opt.code)}
+            aria-current={active ? 'true' : undefined}
+            aria-label={opt.name}
+            hrefLang={opt.code}
+            className={`relative z-10 flex items-center justify-center gap-1.5 w-[4.25rem] py-1.5 rounded-full font-garamond font-bold text-base leading-none no-underline transition-colors duration-300 ${
+              active ? 'text-[#fbf3e4] pointer-events-none' : 'text-[#2b1a10] hover:text-[#7b1a1f]'
+            }`}
+            style={{ textDecoration: 'none' }}
+          >
+            <Flag code={opt.code} />
+            {opt.label}
+          </Link>
+        )
+      })}
     </div>
   )
 }
 
-// Helper functions to map paths between languages
-function getGermanPath(pathname: string): string {
-  // Remove /en prefix and map English paths to German
-  const cleanPath = pathname.replace(/^\/en/, '')
-  
-  const pathMap: Record<string, string> = {
-    '': '/',
-    '/': '/',
-    '/history': '/geschichte',
-    '/menu': '/speisekarte', 
-    '/contact': '/kontakt',
-    '/reservation': '/reservierung'
+function Flag({ code }: { code: 'de' | 'en' }) {
+  if (code === 'en') {
+    return (
+      <svg viewBox="0 0 60 30" className="w-5 h-3 rounded-[2px] shadow-sm shrink-0" aria-hidden="true">
+        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="2.5" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+      </svg>
+    )
   }
-  
-  return pathMap[cleanPath] || '/'
-}
-
-function getEnglishPath(pathname: string): string {
-  // Map German paths to English
-  const pathMap: Record<string, string> = {
-    '/': '/en',
-    '/geschichte': '/history',
-    '/speisekarte': '/menu',
-    '/kontakt': '/contact', 
-    '/reservierung': '/reservation'
-  }
-  
-  return pathMap[pathname] || '/en'
+  return (
+    <svg viewBox="0 0 5 3" className="w-5 h-3 rounded-[2px] shadow-sm shrink-0" aria-hidden="true">
+      <rect width="5" height="1" y="0" fill="#000" />
+      <rect width="5" height="1" y="1" fill="#DD0000" />
+      <rect width="5" height="1" y="2" fill="#FFCE00" />
+    </svg>
+  )
 }
