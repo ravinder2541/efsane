@@ -10,25 +10,25 @@ export const metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8f1e6]">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-r from-primary-800 to-primary-600">
-        <div className="absolute inset-0 german-pattern opacity-20"></div>
+      <section className="relative pt-36 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-[#3a2010] via-[#2a1608] to-[#1a0d05] border-b-2 border-[#c9a25e]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,94,0.18),transparent_65%)]"></div>
         <div className="container-max relative z-10">
-          <div className="text-center text-white">
+          <div className="text-center text-[#f3e6cf]">
             <Link
               href="/"
-              className="inline-flex items-center text-secondary-300 hover:text-secondary-200 mb-6 transition-colors"
+              className="inline-flex items-center px-5 py-1.5 rounded-full border border-[#c9a25e]/70 text-[#e6c27a] hover:text-[#f6dca0] hover:bg-white/5 mb-6 transition-colors font-garamond text-lg no-underline"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Zurück zur Startseite
             </Link>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#f6dca0] to-[#c9a25e] bg-clip-text text-transparent leading-tight">
               Impressum
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+            <p className="font-garamond text-xl md:text-2xl text-[#f3e6cf]/90 max-w-3xl mx-auto">
               Rechtliche Informationen und Kontaktdaten
             </p>
           </div>
@@ -36,35 +36,35 @@ export default function ImpressumPage() {
       </section>
 
       {/* Content */}
-      <section className="section-padding">
+      <section className="section-padding bg-[#f8f1e6] text-[#3a332d]">
         <div className="container-max">
           <div className="max-w-4xl mx-auto">
             {/* Contact Information Card */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-100">
-              <h2 className="font-serif text-3xl font-bold text-primary-700 mb-6 text-center">
+            <div className="bg-[#fffaf1] rounded-2xl shadow-[0_10px_30px_rgba(120,80,30,0.12)] p-6 md:p-8 mb-8 border border-[#e3cfa6]">
+              <h2 className="font-serif text-3xl font-bold text-[#2b1a10] mb-6 text-center">
                 Angaben gemäß § 5 TMG
               </h2>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="font-semibold text-xl text-primary-700 mb-4">
+                  <h3 className="font-serif font-semibold text-xl text-[#7b1a1f] mb-4">
                     Betreiber
                   </h3>
                   <div className="space-y-3">
-                    <p className="text-lg font-medium text-gray-800">
+                    <p className="text-lg font-medium text-[#2b1a10]">
                       Efsane Gasthaus Rudolph
                     </p>
-                    <p className="text-gray-600">Inhaber: Kenan Gebes</p>
+                    <p className="text-[#5a4c40]">Inhaber: Kenan Gebes</p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-xl text-primary-700 mb-4">
+                  <h3 className="font-serif font-semibold text-xl text-[#7b1a1f] mb-4">
                     Adresse
                   </h3>
                   <div className="flex items-start space-x-3">
-                    <MapPin className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="text-gray-700">
+                    <MapPin className="w-5 h-5 text-[#a5692a] mt-1 flex-shrink-0" />
+                    <div className="text-[#3a332d]">
                       <p>Alt Niederhofheim 30</p>
                       <p>65835 Liederbach am Taunus</p>
                       <p>Deutschland</p>
@@ -75,24 +75,24 @@ export default function ImpressumPage() {
 
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div>
-                  <h3 className="font-semibold text-xl text-primary-700 mb-4">
+                  <h3 className="font-serif font-semibold text-xl text-[#7b1a1f] mb-4">
                     Kontakt
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
-                      <Phone className="w-5 h-5 text-primary-600" />
+                      <Phone className="w-5 h-5 text-[#a5692a]" />
                       <a
                         href="tel:+4961962364"
-                        className="text-gray-700 hover:text-primary-600 transition-colors"
+                        className="text-[#3a332d] hover:text-[#7b1a1f] transition-colors"
                       >
                         06196 23640
                       </a>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Mail className="w-5 h-5 text-primary-600" />
+                      <Mail className="w-5 h-5 text-[#a5692a]" />
                       <a
                         href="mailto:info@efsane-events.de"
-                        className="text-gray-700 hover:text-primary-600 transition-colors"
+                        className="text-[#3a332d] hover:text-[#7b1a1f] transition-colors"
                       >
                         info@efsane-events.de
                       </a>
@@ -101,15 +101,15 @@ export default function ImpressumPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-xl text-primary-700 mb-4">
+                  <h3 className="font-serif font-semibold text-xl text-[#7b1a1f] mb-4">
                     Öffnungszeiten
                   </h3>
                   <div className="flex items-start space-x-3">
-                    <Clock className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                    <div className="text-gray-700 space-y-1">
+                    <Clock className="w-5 h-5 text-[#a5692a] mt-1 flex-shrink-0" />
+                    <div className="text-[#3a332d] space-y-1">
                       <p>Montag - Sonntag</p>
                       <p>Nach Vereinbarung</p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-[#8a7a68]">
                         Für Events und Veranstaltungen
                       </p>
                     </div>
@@ -119,7 +119,7 @@ export default function ImpressumPage() {
             </div>
 
             {/* Legal Information */}
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#2b1a10] prose-h2:text-[#7b1a1f] prose-p:text-[#3a332d] prose-li:text-[#3a332d] prose-strong:text-[#2b1a10] prose-a:text-[#7b1a1f] prose-li:marker:text-[#b08a45]">
               <h2>Rechtliche Hinweise</h2>
 
               <h3>Umsatzsteuer-ID</h3>
@@ -188,7 +188,7 @@ export default function ImpressumPage() {
                   href="https://ec.europa.eu/consumers/odr/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:text-primary-700"
+                  className="text-[#7b1a1f] hover:text-[#5a1014] underline-offset-2 hover:underline"
                 >
                   https://ec.europa.eu/consumers/odr/
                 </a>
@@ -199,7 +199,7 @@ export default function ImpressumPage() {
                 Verbraucherschlichtungsstelle teilzunehmen.
               </p>
 
-              <p className="text-sm text-gray-600 mt-8">
+              <p className="text-sm text-[#6b5d50] mt-8">
                 Stand: {new Date().toLocaleDateString("de-DE")}
               </p>
             </div>

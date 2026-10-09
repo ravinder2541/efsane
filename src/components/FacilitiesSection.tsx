@@ -56,6 +56,13 @@ const labelSpots: Record<Facility['key'], string> = {
   event: 'left-[79.8%] top-[79.2%] w-[11.4%] h-[5.5%]',
 }
 
+// Same labels in facilities-mobile.png (percent of the 941x1671 image)
+const mobileLabelSpots: Record<Facility['key'], string> = {
+  beer: 'left-[60%] top-[69.3%] w-[19.6%] h-[2.9%]',
+  winter: 'left-[28.6%] top-[83.9%] w-[22%] h-[2.9%]',
+  event: 'left-[65.6%] top-[87.6%] w-[20.8%] h-[2.9%]',
+}
+
 function Divider({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 320 14" className={className} aria-hidden="true">
@@ -87,12 +94,12 @@ export default function FacilitiesSection({ locale = 'de' }: { locale?: 'de' | '
 
   return (
     <section
-      className="relative overflow-hidden bg-[#1a110b] hero:h-[var(--h)] flex flex-col [font-variant-numeric:lining-nums]"
+      className="relative overflow-hidden bg-[#2e1504] hero:bg-[#1a110b] hero:h-[var(--h)] flex flex-col [font-variant-numeric:lining-nums]"
       // Layout unit for the text column: scales with width, capped by height and by the dark area left of the photos
       style={{ '--h': 'max(min(82svh,52vw),540px)', '--u': 'min(1vw, calc(var(--h) * 0.016), calc((100vw - var(--h) * 0.785) / 37))' } as React.CSSProperties}
     >
       {/* Artboard: background at its native ratio, scaled like object-cover and anchored right */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[max(100%,calc(var(--h)*1.7728))] aspect-[1670/942] [container-type:inline-size]">
+      <div className="hidden hero:block absolute right-0 top-1/2 -translate-y-1/2 w-[max(100%,calc(var(--h)*1.7728))] aspect-[1670/942] [container-type:inline-size]">
         <Image src="/facilitiessection.png" alt="" fill sizes="100vw" className="object-cover" />
 
         {/* Our labels always cover the English ones baked into the image (dimmed by the overlay on small screens) */}
@@ -112,10 +119,26 @@ export default function FacilitiesSection({ locale = 'de' }: { locale?: 'de' | '
         </div>
       </div>
 
-      {/* Darken on portrait / small screens so the text stays readable over the photos */}
-      <div className="absolute inset-0 bg-[#1a110b]/90 hero:hidden"></div>
+      {/* Portrait artwork for phones/tablets, pinned to the bottom at its own ratio; content sits in its plain top area */}
+      <div className="absolute inset-x-0 bottom-0 aspect-[941/1671] hero:hidden [container-type:inline-size]">
+        <Image src="/mobille/facilities-mobile.png" alt="" fill sizes="100vw" className="object-cover" />
+        <div>
+          {t.facilities.map((f) => {
+            const Icon = icons[f.key]
+            return (
+              <div
+                key={f.key}
+                className={`absolute ${mobileLabelSpots[f.key]} rounded-full bg-gradient-to-b from-[#fbf3e3] to-[#efe0c4] border border-[#c9a25e] shadow-[0_0.6cqw_1.6cqw_rgba(0,0,0,0.35)] flex items-center justify-center gap-[1.4cqw] text-[#2a1a10]`}
+              >
+                <Icon className="w-[3.2cqw] h-[3.2cqw]" strokeWidth={1.8} />
+                <span className="font-garamond font-bold text-[length:2.7cqw] whitespace-nowrap">{f.title}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
 
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-5 pt-20 pb-8 hero:pt-[calc(var(--u)*4)] hero:pb-[calc(var(--u)*3)] hero:pl-[calc(max(100vw,var(--h)*1.7728)*0.085)] hero:pr-0">
+      <div className="relative z-10 flex-1 flex flex-col justify-start hero:justify-center px-5 pt-14 pb-[88vw] hero:pt-[calc(var(--u)*4)] hero:pb-[calc(var(--u)*3)] hero:pl-[calc(max(100vw,var(--h)*1.7728)*0.085)] hero:pr-0">
         <div className="max-w-xl mx-auto hero:mx-0 hero:max-w-none hero:w-[calc(var(--u)*29)] text-center hero:text-left">
           <p className="flex items-center justify-center hero:justify-start gap-3 hero:gap-[calc(var(--u)*1.2)] font-garamond font-semibold text-[#d0a866] whitespace-nowrap tracking-[0.22em] text-sm hero:text-[length:calc(var(--u)*1.3)]">
             <span className="block w-6 hero:w-[calc(var(--u)*2.2)] h-px bg-current"></span>

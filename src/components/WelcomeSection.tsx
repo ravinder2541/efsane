@@ -96,13 +96,13 @@ export default function WelcomeSection({ locale = 'de' }: { locale?: 'de' | 'en'
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f6eedf] min-h-[100svh] hero:h-[var(--h)] flex flex-col [font-variant-numeric:lining-nums]"
+      className="relative overflow-hidden bg-[#f8ecd9] hero:bg-[#f6eedf] hero:h-[var(--h)] flex flex-col [font-variant-numeric:lining-nums]"
       // Layout unit for the text column: scales with width, capped by height and by the cream area
       style={{ '--h': 'max(100svh,600px)', '--u': 'min(1vw, calc(var(--h) * 0.016), calc((100vw - var(--h) * 1.03) / 42))' } as React.CSSProperties}
     >
       {/* Artboard: the background at its native ratio, scaled like object-cover (anchored right),
           so the sign and note stay pinned to the right spots in the picture. */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[max(100%,calc(var(--h)*1.7747))] aspect-[1670/941] [container-type:inline-size]">
+      <div className="hidden hero:block absolute right-0 top-1/2 -translate-y-1/2 w-[max(100%,calc(var(--h)*1.7747))] aspect-[1670/941] [container-type:inline-size]">
         <Image src="/historysectionbg.png" alt="" fill sizes="100vw" className="object-cover" />
 
         <div className="hidden hero:block">
@@ -130,10 +130,12 @@ export default function WelcomeSection({ locale = 'de' }: { locale?: 'de' | 'en'
         </div>
       </div>
 
-      {/* Cream wash on portrait / small screens so the text stays readable */}
-      <div className="absolute inset-0 bg-[#f6eedf]/85 hero:hidden"></div>
+      {/* Portrait artwork for phones/tablets, pinned to the bottom at its own ratio; content sits in its plain top area */}
+      <div className="absolute inset-x-0 bottom-0 aspect-[941/1671] hero:hidden [container-type:inline-size]">
+        <Image src="/mobille/historysection-mobile.png" alt="" fill sizes="100vw" className="object-cover" />
+      </div>
 
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-5 pt-20 pb-6 hero:pt-24 hero:pb-[calc(var(--u)*3)] hero:pl-[calc(var(--u)*5.6)] hero:pr-0">
+      <div className="relative z-10 flex-1 flex flex-col justify-start hero:justify-center px-5 pt-14 pb-[100vw] hero:pt-24 hero:pb-[calc(var(--u)*3)] hero:pl-[calc(var(--u)*5.6)] hero:pr-0">
         <div className="hero:w-[calc(var(--u)*38)] text-center hero:text-left">
           <p className="flex items-center justify-center hero:justify-start gap-3 hero:gap-[calc(var(--u)*0.9)] font-garamond font-semibold text-[#5a3a22] tracking-[0.18em] text-sm hero:text-[length:calc(var(--u)*1.25)]">
             <SideOrnament />

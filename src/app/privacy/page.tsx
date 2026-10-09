@@ -10,22 +10,22 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8f1e6]">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-r from-primary-800 to-primary-600">
-        <div className="absolute inset-0 german-pattern opacity-20"></div>
+      <section className="relative pt-36 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-[#3a2010] via-[#2a1608] to-[#1a0d05] border-b-2 border-[#c9a25e]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,94,0.18),transparent_65%)]"></div>
         <div className="container-max relative z-10">
-          <div className="text-center text-white">
-            <Link href="/en" className="inline-flex items-center text-secondary-300 hover:text-secondary-200 mb-6 transition-colors">
+          <div className="text-center text-[#f3e6cf]">
+            <Link href="/en" className="inline-flex items-center px-5 py-1.5 rounded-full border border-[#c9a25e]/70 text-[#e6c27a] hover:text-[#f6dca0] hover:bg-white/5 mb-6 transition-colors font-garamond text-lg no-underline">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to home
             </Link>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-b from-[#f6dca0] to-[#c9a25e] bg-clip-text text-transparent leading-tight">
               Privacy Policy
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+            <p className="font-garamond text-xl md:text-2xl text-[#f3e6cf]/90 max-w-3xl mx-auto">
               Information about how we handle your data
             </p>
           </div>
@@ -33,9 +33,9 @@ export default function PrivacyPage() {
       </section>
 
       {/* Content */}
-      <section className="section-padding">
+      <section className="section-padding bg-[#f8f1e6] text-[#3a332d]">
         <div className="container-max">
-          <div className="max-w-4xl mx-auto prose prose-lg">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:text-[#2b1a10] prose-h2:text-[#7b1a1f] prose-p:text-[#3a332d] prose-li:text-[#3a332d] prose-strong:text-[#2b1a10] prose-a:text-[#7b1a1f] prose-li:marker:text-[#b08a45]">
             
             <h2>1. Privacy at a Glance</h2>
             
@@ -144,7 +144,7 @@ export default function PrivacyPage() {
               Phone: +49 6196 23640
             </p>
 
-            <p className="text-sm text-gray-600 mt-8">
+            <p className="text-sm text-[#6b5d50] mt-8">
               Last updated: {new Date().toLocaleDateString('en-US')}
             </p>
           </div>

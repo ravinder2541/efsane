@@ -104,7 +104,7 @@ export default function HomeHero({ locale = 'de' }: { locale?: 'de' | 'en' }) {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f6eedf] [font-variant-numeric:lining-nums] min-h-[100svh] hero:h-[100svh] hero:min-h-[540px] flex flex-col"
+      className="relative overflow-hidden bg-[#f7ecdb] hero:bg-[#f6eedf] [font-variant-numeric:lining-nums] hero:h-[100svh] hero:min-h-[540px] flex flex-col"
       // One layout unit: scales with width, but never so large that the content outgrows the
       // viewport height or the cream area left of the photo.
       style={{ '--h': '100svh', '--u': 'min(1vw, calc(var(--h) * 0.016), calc((100vw - var(--h) * 0.977) / 44))' } as React.CSSProperties}
@@ -115,12 +115,14 @@ export default function HomeHero({ locale = 'de' }: { locale?: 'de' | 'en' }) {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-right hero:object-[right_top]"
+        className="hidden hero:block object-cover object-[right_top]"
       />
-      {/* Cream wash on portrait / small screens, where the photo sits behind the text */}
-      <div className="absolute inset-0 bg-[#f6eedf]/85 hero:hidden"></div>
+      {/* Portrait artwork for phones/tablets, pinned to the bottom at its own ratio; content sits in its plain top area */}
+      <div className="absolute inset-x-0 bottom-0 aspect-[941/1671] hero:hidden [container-type:inline-size]">
+        <Image src="/mobille/hero-mobile.png" alt="" fill sizes="100vw" className="object-cover" />
+      </div>
 
-      <div className="relative z-10 flex-1 flex flex-col justify-center hero:justify-between gap-[3svh] px-5 pt-20 pb-4 hero:gap-0 hero:pt-24 hero:pb-[calc(var(--u)*1.6)] hero:pl-[calc(var(--u)*7.8)] hero:pr-0">
+      <div className="relative z-10 flex-1 flex flex-col justify-start hero:justify-between gap-[3svh] px-5 pt-24 pb-[80vw] hero:gap-0 hero:pt-24 hero:pb-[calc(var(--u)*1.6)] hero:pl-[calc(var(--u)*7.8)] hero:pr-0">
           {/* Headline block */}
           <div className="hero:flex-1 hero:flex hero:flex-col hero:justify-start hero:pt-[calc(max(var(--h),56.3vw)*0.27-6rem)] hero:w-[calc(var(--u)*38)] text-center hero:text-left">
             <p className="flex items-center justify-center hero:justify-start gap-3 font-cinzel font-semibold text-[#a8803a] whitespace-nowrap tracking-[0.15em] sm:tracking-[0.25em] text-xs sm:text-sm hero:text-[length:calc(var(--u)*1.14)]">

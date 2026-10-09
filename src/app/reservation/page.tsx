@@ -174,9 +174,9 @@ export default function ReservationPage() {
             </p>
           </div>
 
-          <div className="mt-10 lg:mt-12 grid gap-8 lg:grid-cols-3 lg:gap-7 items-start">
+          <div className="mt-10 lg:mt-12 grid gap-8 lg:grid-cols-3 lg:gap-7 items-stretch">
             {/* Reservation Form */}
-            <div className="lg:col-span-2 rounded-xl border border-[#c9a25e]/60 bg-[#fffaf1]/85 backdrop-blur-sm shadow-[0_18px_40px_rgba(120,80,30,0.18)] p-6 md:p-8">
+            <div className="lg:col-span-2 flex flex-col rounded-xl border border-[#c9a25e]/60 bg-[#fffaf1]/85 backdrop-blur-sm shadow-[0_18px_40px_rgba(120,80,30,0.18)] p-6 md:p-8">
               <div className="flex items-center gap-5">
                 <span className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-b from-[#8e1f25] to-[#6c1519] text-[#fbe9c4] flex items-center justify-center shadow-[0_3px_8px_rgba(80,20,20,0.3)]">
                   <Calendar className="w-6 h-6" strokeWidth={1.8} />
@@ -186,7 +186,7 @@ export default function ReservationPage() {
               
 
 
-              <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="mt-6 flex-1 flex flex-col gap-6">
                 {/* Personal Information */}
                 <div className="rounded-xl border border-[#c9a25e]/40 bg-white/50 p-5 md:p-6">
                   <h3 className="font-serif text-2xl font-semibold text-[#7b1a1f] mb-4 pb-2 border-b border-[#c9a25e]/40">
@@ -327,14 +327,14 @@ export default function ReservationPage() {
                 </div>
 
                 {/* Special Requests */}
-                <div>
+                <div className="flex-1 flex flex-col">
                   <label htmlFor="specialRequests" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                     Special requests
                   </label>
                   <textarea
                     id="specialRequests"
                     {...register('specialRequests')}
-                    className={`form-textarea ${errors.specialRequests ? 'error' : ''}`}
+                    className={`w-full rounded-lg border bg-white/90 px-4 py-3 text-[#2b1a10] placeholder:text-[#9a8a78] font-garamond text-lg focus:outline-none focus:ring-2 focus:ring-[#c9a25e]/30 transition-colors resize-y flex-1 min-h-[7rem] ${errors.specialRequests ? 'border-[#b3261e]' : 'border-[#d6c098] focus:border-[#b08a45]'}`}
                     placeholder="Do you have any special requests or requirements? (e.g. decoration, menu preferences, allergies, etc.)"
                     rows={4}
                   />
@@ -376,7 +376,7 @@ export default function ReservationPage() {
             </div>
 
             {/* Restaurant Information */}
-            <div className="space-y-7">
+            <div className="flex flex-col gap-7">
               <div className="rounded-xl border border-[#c9a25e]/60 bg-[#fffaf1]/85 backdrop-blur-sm shadow-[0_18px_40px_rgba(120,80,30,0.18)] p-6">
               <div className="flex items-center gap-4 mb-3">
                 <span className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-b from-[#8e1f25] to-[#6c1519] text-[#fbe9c4] flex items-center justify-center shadow-[0_3px_8px_rgba(80,20,20,0.3)]">
@@ -447,7 +447,7 @@ export default function ReservationPage() {
               </div>
 
               {/* Opening Hours */}
-              <div className="p-6 rounded-xl bg-gradient-to-b from-[#7b1a1f] to-[#5a1014] text-[#fbf3e4] border border-[#c9a25e]/60 shadow-[0_18px_40px_rgba(80,20,20,0.25)]">
+              <div className="flex-1 flex flex-col justify-center p-6 rounded-xl bg-gradient-to-b from-[#7b1a1f] to-[#5a1014] text-[#fbf3e4] border border-[#c9a25e]/60 shadow-[0_18px_40px_rgba(80,20,20,0.25)]">
   <h3 className="font-serif text-2xl font-bold mb-3 pb-2 flex items-center gap-3 border-b border-[#e6c27a]/40 text-[#f6dca0]">
     <Clock className="w-6 h-6" />
     Opening hours

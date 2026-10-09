@@ -219,9 +219,9 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
           <p className="mt-3 text-2xl md:text-[2rem] text-[#3b2416]">{t.subtitle}</p>
         </div>
 
-        <div className="mt-10 lg:mt-12 grid gap-8 lg:grid-cols-2 lg:gap-7 items-start">
+        <div className="mt-10 lg:mt-12 grid gap-8 lg:grid-cols-2 lg:gap-7 items-stretch">
           {/* Form */}
-          <div className={`${card} p-6 md:p-8`}>
+          <div className={`${card} p-6 md:p-8 flex flex-col`}>
             <div className="flex items-center gap-5">
               <span className={solidBadge}>
                 <Mail className="w-6 h-6" strokeWidth={2} />
@@ -242,7 +242,7 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
               </div>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="mt-5 space-y-5" noValidate>
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-5 flex-1 flex flex-col gap-5" noValidate>
               {fields.map(({ key, type, required }) => (
                 <div key={key}>
                   <label htmlFor={key} className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
@@ -260,7 +260,7 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
                 </div>
               ))}
 
-              <div>
+              <div className="flex-1 flex flex-col">
                 <label htmlFor="message" className="block mb-1.5 text-xl font-bold text-[#2b1a10]">
                   {t.fields.message.label}
                   <span className="text-[#b3261e] ml-1">*</span>
@@ -268,7 +268,7 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
                 <textarea
                   id="message"
                   {...register("message")}
-                  className={`${inputClass} resize-y`}
+                  className={`${inputClass} resize-y flex-1 min-h-[7rem]`}
                   placeholder={t.fields.message.placeholder}
                   rows={4}
                 />
@@ -305,7 +305,7 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
             </form>
           </div>
 
-          <div className="space-y-7">
+          <div className="flex flex-col gap-7">
             {/* Contact info */}
             <div className={`${card} p-6 md:p-8`}>
               <div className="flex items-center gap-5 pb-4 border-b border-[#c9a25e]/40">
@@ -362,7 +362,7 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
                     <dl className="mt-2 grid sm:grid-cols-[1fr_auto] gap-x-6 gap-y-1 leading-snug">
                       {t.hours.map(([day, time]) => (
                         <div key={day} className="contents">
-                          <dt className="max-sm:mt-1.5 max-sm:font-semibold">{day}</dt>
+                          <dt className="mt-1.5 font-semibold sm:mt-0 sm:font-normal">{day}</dt>
                           <dd className="whitespace-nowrap">{time}</dd>
                         </div>
                       ))}
@@ -373,7 +373,7 @@ export default function ContactPageContent({ locale = "de" }: { locale?: "de" | 
             </div>
 
             {/* Why us */}
-            <div className={`${card} p-6 md:p-8`}>
+            <div className={`${card} p-6 md:p-8 flex-1 flex flex-col justify-center`}>
               <div className="flex items-center gap-5">
                 <span className={solidBadge}>
                   <Star className="w-6 h-6" fill="currentColor" />

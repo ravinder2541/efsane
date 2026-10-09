@@ -73,19 +73,21 @@ export default function ConceptSection({ locale = 'de' }: { locale?: 'de' | 'en'
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f7efe0] min-h-[85svh] hero:min-h-0 hero:h-[max(min(82svh,46vw),500px)] flex flex-col [font-variant-numeric:lining-nums]"
+      className="relative overflow-hidden bg-[#fbefda] hero:bg-[#f7efe0] hero:min-h-0 hero:h-[max(min(82svh,46vw),500px)] flex flex-col [font-variant-numeric:lining-nums]"
       // Layout unit for the text column: scales with width, capped by height and by the cream area right of the photos
       style={{ '--u': 'min(0.85vw, 1.3svh, calc((100vw - 76svh) / 52))' } as React.CSSProperties}
     >
       {/* Background at its native ratio, scaled like object-cover and anchored left (photos sit on the left) */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[max(100%,calc(max(min(82svh,46vw),500px)*1.7728))] aspect-[1670/942]">
+      <div className="hidden hero:block absolute left-0 top-1/2 -translate-y-1/2 w-[max(100%,calc(max(min(82svh,46vw),500px)*1.7728))] aspect-[1670/942]">
         <Image src="/conceptbg.png" alt="" fill sizes="100vw" className="object-cover" />
       </div>
 
-      {/* Cream wash on portrait / small screens so the text stays readable */}
-      <div className="absolute inset-0 bg-[#f7efe0]/85 hero:hidden"></div>
+      {/* Portrait artwork for phones/tablets, pinned to the bottom at its own ratio; content sits in its plain top area */}
+      <div className="absolute inset-x-0 bottom-0 aspect-[941/1671] hero:hidden [container-type:inline-size]">
+        <Image src="/mobille/conceptmobile.png" alt="" fill sizes="100vw" className="object-cover" />
+      </div>
 
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-5 pt-14 pb-8 hero:items-end hero:pt-[calc(var(--u)*2)] hero:pb-[calc(var(--u)*7)] hero:pr-[calc(var(--u)*5.5)] hero:pl-0">
+      <div className="relative z-10 flex-1 flex flex-col justify-start hero:justify-center px-5 pt-14 pb-[100vw] hero:items-end hero:pt-[calc(var(--u)*2)] hero:pb-[calc(var(--u)*7)] hero:pr-[calc(var(--u)*5.5)] hero:pl-0">
         <div className="max-w-xl mx-auto hero:mx-0 hero:max-w-none hero:w-[calc(var(--u)*46)] text-center hero:text-left">
           {/* Eyebrow, centred over the heading like in the design */}
           <div className="flex flex-col items-center hero:w-[calc(var(--u)*30)] hero:mx-auto hero:-translate-x-[calc(var(--u)*3)] text-[#a5762f]">
