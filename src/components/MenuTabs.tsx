@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import {
   Star, Leaf, Cherry, Info, ChevronRight, ArrowLeft,
@@ -211,10 +210,8 @@ export default function MenuTabs({ categories, language = 'de', intro }: MenuTab
     <div className="relative w-full lg:flex lg:pt-24 bg-[#f8f0e2] font-garamond [font-variant-numeric:lining-nums]">
       {/* ---------- Left panel: title + categories ---------- */}
       <aside className="relative lg:w-[31%] lg:min-w-[340px] lg:max-w-[480px] shrink-0">
-        <div className="relative lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)] overflow-hidden lg:rounded-tr-[90px] border-r-0 lg:border-r-[3px] lg:border-t-[3px] border-[#c9a25e] bg-[radial-gradient(ellipse_at_20%_60%,#5a3416,#2a1608_65%,#1a0d05)] lg:bg-[#2a1608]">
-          <Image src="/menubg.png" alt="" fill sizes="(min-width: 1024px) 35vw, 100vw" className="hidden lg:block object-cover object-left-top" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/55"></div>
-
+        <div className="relative lg:sticky lg:top-[72px] lg:h-[calc(100vh-72px)] overflow-hidden lg:rounded-tr-[90px] border-r-0 lg:border-r-[3px] lg:border-t-[3px] border-[#c9a25e] bg-gradient-to-b from-[#3a2010] via-[#2a1608] to-[#1a0d05]">
+          
           <div className="relative h-full flex flex-col px-5 sm:px-8 lg:px-[2.4vw] pt-24 lg:pt-8 pb-6">
             {intro && (
               <div className="shrink-0">
@@ -293,7 +290,7 @@ export default function MenuTabs({ categories, language = 'de', intro }: MenuTab
       {/* ---------- Right panel: active category ---------- */}
       <div
         ref={contentRef}
-        className="relative flex-1 min-w-0 lg:min-h-[calc(100vh-96px)] scroll-mt-20 bg-[#f8f0e2] bg-[url('/menubg.png')] bg-no-repeat bg-[length:150%_auto] bg-[position:100%_0]"
+        className="relative flex-1 min-w-0 lg:min-h-[calc(100vh-96px)] scroll-mt-20 bg-[#f8f0e2]"
       >
         {activeCategory && (
           <div className="relative px-5 sm:px-8 lg:px-[3.5vw] pt-10 lg:pt-10 pb-12">
